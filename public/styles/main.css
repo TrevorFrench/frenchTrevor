@@ -25,7 +25,7 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #111;
+  background-color: #4CAF50;
 }
 
 .other {
@@ -93,7 +93,7 @@ h1 {
 }
 
 .bodyDiv {
-       width:1200px; 
+       width:500px; 
        margin:0 auto;
   }
 
