@@ -67,7 +67,7 @@ var vHeight = 300;
 var vRadius = Math.min(vWidth, vHeight) / 2;  // < -- 2
 var vColor = d3.scaleOrdinal(d3.schemeCategory20);   // <-- 3
 
-d3.json('http://trevorfrench.rf.gd/json/data-simple.json', function(error, vData) {
+d3.json('../json/data-simple.json', function(error, vData) {
     if (error) throw error;
     drawSunburst(vData);
     });
