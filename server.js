@@ -44,9 +44,9 @@ app.post("/submit", function(req, res) {
 	if(req.body){
 			let keys = Object.keys(req.body);
 			var transporter = nodemailer.createTransport({
-  				service: 'Outlook365',
+  				service: 'gmail',
   				auth: {
-    			user: req.body[keys[0]] + "@byui.edu",
+    			user: req.body[keys[0]],
     			pass: req.body[keys[1]]
   						}
 					});
@@ -56,7 +56,7 @@ app.post("/submit", function(req, res) {
 
 
 var mailOptions = {
-  from: 'byuisupportcenter@byui.edu',
+  from: req.body[keys[0]],
   to: i + '@vtext.com,' 
     + i + '@messaging.sprintpcs.com,'
     + i + '@text.att.net,'
