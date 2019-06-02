@@ -31,6 +31,8 @@ li a:hover {
 .other {
   background-color: inherit;
   list-style-type: disc;
+  margin: 1;
+  padding: 1;
 }
 
 /* a:link.poplink, a:visited.poplink {
