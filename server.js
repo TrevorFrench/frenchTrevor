@@ -32,9 +32,9 @@ app.set("port", (process.env.PORT || 5000)); // sets the port to 5000
 
 
 app.use(express.static(path.join(__dirname, 'public'))); // this allows js and css files to be linked to the HTML
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public/views/index.html'))); // when the root directory loads, sendthe index.html file to the client
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public/views/main.html'))); // when the root directory loads, sendthe index.html file to the client
 
-app.post('/', (req, res) => res.sendFile(path.join(__dirname, 'public/views/index.html')));
+app.post('/', (req, res) => res.sendFile(path.join(__dirname, 'public/views/main.html')));
 
 app.post('/massTexter', function(req, res) {
 	res.render('massTexter.ejs')});
