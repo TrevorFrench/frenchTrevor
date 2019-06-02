@@ -1,7 +1,7 @@
 .calculator input {
     width:90%;
     padding: 15px 15px;
-    align-content: center;
+    margin:0 auto;
 }
 
 ul {
