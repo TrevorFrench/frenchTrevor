@@ -15,7 +15,7 @@
   float: left;
 }
 
-a.popListItem {
+a .popListItem {
   display: block;
   color: white;
   text-align: center;
