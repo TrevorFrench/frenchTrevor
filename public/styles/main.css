@@ -3,8 +3,32 @@
     padding: 15px 15px;
 }
 
+.poplist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
 
-a:link.poplink, a:visited.poplink {
+.popListItem {
+  float: left;
+}
+
+a.popListItem {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+a:hover.popListItem {
+  background-color: #111;
+}
+
+/* a:link.poplink, a:visited.poplink {
   text-decoration: none;
 color: white;
   padding: 14px 25px;
@@ -53,7 +77,7 @@ color: black;
 a:link.reference, a:visited.reference, a:hover.reference, a:active.reference {
   text-decoration: none;
 color: blue;
-}
+} */
 
 h1 {
     text-align: center;
@@ -68,7 +92,7 @@ h1 {
        margin:0 auto;
   }
 
-.popList {
+/*.popList {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -82,7 +106,7 @@ h1 {
 
 .mobileMenu {
     display: none;
-}
+} */
 
 body {
     height: 100%;
