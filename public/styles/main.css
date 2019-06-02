@@ -3,7 +3,7 @@
     padding: 15px 15px;
 }
 
-.poplist {
+.popList {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@
   float: left;
 }
 
-a .popListItem {
+.popLinkItem {
   display: block;
   color: white;
   text-align: center;
@@ -24,7 +24,7 @@ a .popListItem {
 }
 
 /* Change the link color to #111 (black) on hover */
-a:hover.popListItem {
+a:hover.popLinkItem {
   background-color: #111;
 }
 
