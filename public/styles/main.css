@@ -28,6 +28,10 @@ li a:hover {
   background-color: #111;
 }
 
+.other {
+  background-color: inherit;
+}
+
 /* a:link.poplink, a:visited.poplink {
   text-decoration: none;
 color: white;
