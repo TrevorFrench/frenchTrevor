@@ -15,7 +15,7 @@
   float: left;
 }
 
-.popLinkItem {
+.popListItem .popLinkItem {
   display: block;
   color: white;
   text-align: center;
@@ -24,7 +24,7 @@
 }
 
 /* Change the link color to #111 (black) on hover */
-a:hover.popLinkItem {
+.popListItem .popLinkItem:hover {
   background-color: #111;
 }
 
