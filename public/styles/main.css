@@ -33,10 +33,6 @@ li a:hover {
   list-style-type: disc;
 }
 
-.otherli {
-  display:inline-block;
-}
-
 /* a:link.poplink, a:visited.poplink {
   text-decoration: none;
 color: white;
