@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>BSC Auto-Texter</title>
+</head>
+<body>
+    <main>
+        <h1 align="center">BYU-Idaho Support Center Auto-Texter (Mass)</h1>
+    </main>
+    
+  <div class="mainWrapper">
+    <p align="left">Please insert your my.byui username and password here:</p>
+
+    <form method ="POST" action="/submitMassText" encType="multipart/form-data">
+    <fieldset>
+      <legend>Login</legend>
+      <br>Username:
+      <input type="text" name="emailAddress">      
+      <br>Password:
+      <input type="password" name="password">
+    </fieldset>
+      <br>
+      
+      <p align="left">Please insert the the phone number you would like to contact as well the message you would like to send here:</p>
+      <br>
+    <fieldset>
+      <legend>Text Information</legend>
+      <br>Message:
+      <input maxlength="152" type="text" name="message">
+      <br>Phone Numbers:
+      <input type="file" name="csvee" accept=".csv">
+    </fieldset>
+      <input type="submit">
+    </form>
+  </div>
+
+
+      <script src="../scripts/script.js"></script>
+</body>
+</html>
