@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://trevorfrench.rf.gd/stylesheets/main.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<title>Trevor French - Data Gathering</title>
+</head>
+<body>
+<h1><a href="http://trevorfrench.rf.gd/" class="title">Trevor French</a></h1>
+<div class="bodyDiv">
+<div style="width:800px; margin:0 auto;">
+    <ul class="popList">
+        <div class="mobileMenu">
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">||| Dropdown Menu |||</a>
+                <div class="dropdown-content">
+                    <a href="http://trevorfrench.rf.gd/documents/French_Trevor_Resume.pdf" class="poplink">Resume</a>
+                    <a href="http://trevorfrench.rf.gd/financial_calculators.html" class="poplink">Financial Calculators</a>
+                    <a href="http://trevorfrench.rf.gd/Sunburst.html" class="poplink">Data Gathering</a>
+                    <a href="http://trevorfrench.rf.gd/stockcharts.html" class="poplink">Personal Blog</a>
+                    <a href="http://trevorfrench.rf.gd/contact_information.html" class="poplink">Contact Info</a>
+                </div>
+        </li>
+        </div>
+        <div class="webMenu">
+        <li class="popListItem"><a href="http://trevorfrench.rf.gd/documents/French_Trevor_Resume.pdf" class="poplink">Resume</a></li>
+        <li class="popListItem"><a href="http://trevorfrench.rf.gd/financial_calculators.html" class="poplink">Financial Calculators</a></li>
+        <li class="popListItem"><a href="http://trevorfrench.rf.gd/Sunburst.html" class="poplink">Data Gathering</a></li>
+        <li class="popListItem"><a href="http://trevorfrench.rf.gd/stockcharts.html" class="poplink">Personal Blog</a></li>
+        <li class="popListItem"><a href="http://trevorfrench.rf.gd/contact_information.html" class="poplink">Contact Info</a></li>
+        </div>
+    </ul>
+    </div>
+
+
+
+
+<div style="width:800px; margin:0 auto;">
+</br>
+</br>
+</br>
+<h3 style="text-align:center;">United States Sex Ratio (2018) - Sunburst</h3>
+
+<svg style="margin:0 auto; display: block;"><g transform='translate(150,150)'>
+    <path display='none' d='. . .' style='stroke: rgb(255, 255, 255); fill: rgb(82, 84, 163);'>
+    <path style='stroke: rgb(255, 255, 255); fill: rgb(82, 84, 163);' d='M1.020538999289461e-14,-166.66666666666666A166.66666666666666,166.66666666666666,0,0,1,
+    150.80450874433657,70.96321526084546L75.40225437216829,35.48160763042273A83.33333333333333,83.33333333333333,
+    0,0,0,5.102694996447305e-15,-83.33333333333333Z'>
+    </path></path> . . . <path></path>
+</g></svg>
+
+<p style="font-size:18px">
+    </br>
+This graph displays the ratio between males and females within different age groups in the United States. This data was recorded in 2018.
+</br>
+</br>
+<b>Source:</b>
+The World Factbook: United States. (2018, February 01). Retrieved April 11, 2019, from https://www.cia.gov/library/publications/the-world-factbook/geos/us.html
+</p>
+
+<div>
+    <h3 style="text-align:center;">Other Datasets</h3>
+  <div style="float:left">
+  <p><a href="http://trevorfrench.rf.gd/Sunburst.html" class="reference">United States Sex Ratio (2018) - Sunburst</a></p>
+  <p><a href="http://trevorfrench.rf.gd/dataVisualization/collision_detection.html" class="reference">Collision Detection</a></p> 
+  <p><a href="http://trevorfrench.rf.gd/dataVisualization/graph.html" class="reference">PCT100 - (Top 100 Pest Control Companies in the United States)</a></p>
+  <p><a href src="" class="reference">Cool Chart</a></p>  
+  </div>
+  </div>
+
+</div>
+</div>
+
+</body>
+<script>
+var vWidth = 300;  // <-- 1
+var vHeight = 300;
+var vRadius = Math.min(vWidth, vHeight) / 2;  // < -- 2
+var vColor = d3.scaleOrdinal(d3.schemeCategory20);   // <-- 3
+
+d3.json('http://trevorfrench.rf.gd/json/data-simple.json', function(error, vData) {
+    if (error) throw error;
+    drawSunburst(vData);
+    });
+
+var g = d3.select('svg')  // <-- 1
+    .attr('width', vWidth)  // <-- 2
+    .attr('height', vHeight)
+    .append('g')  // <-- 3
+    .attr('transform', 
+        'translate(' + vWidth / 2 + ',' + vHeight / 2 + ')');  // <-- 4
+
+var g = d3.select('svg')  // --> <svg></svg>
+    .attr('width', vWidth)  // --> <svg width='300'></svg>
+    .attr('height', vHeight)  // --> <svg width='300' height='300'></svg>
+    .append('g')  // --> <svg width='300' height='300'><g></g></svg>
+    .attr('transform', 
+        'translate(' + vWidth / 2 + ',' + vHeight / 2 + ')');  
+        // --> <svg width='300' height='300'><g transform='translate(150,150)'></g></svg>
+
+var vLayout = d3.partition()  // <-- 1
+    .size([2 * Math.PI, vRadius]);  // <-- 2
+
+var vArc = d3.arc()
+    .startAngle(function (d) { return d.x0 })
+    .endAngle(function (d) { return d.x1 })
+    .innerRadius(function (d) { return d.y0 })
+    .outerRadius(function (d) { return d.y1 });
+
+function drawSunburst(data) {
+    var vRoot = d3.hierarchy(data).sum(function (d) { return d.size});
+var vNodes = vRoot.descendants();  // <--3
+vLayout(vRoot);  // <--4
+
+var vSlices = g.selectAll('g').data(vNodes).enter().append('g');
+
+// Draw on screen
+        vSlices.append('path')
+            .attr('display', function (d) { return d.depth ? null : 'none'; })
+            .attr('d', vArc)
+            .style('stroke', '#fff')
+            .style('fill', function (d) { return vColor((d.children ? d : d.parent).data.id); });
+
+        // Add text
+        vSlices.append('text')
+            .filter(function(d) { return d.parent; })
+            .attr('transform', function(d) {
+                return 'translate(' + vArc.centroid(d) + ') rotate(' + computeTextRotation(d) + ')'; })
+            .attr('dx', '-20')
+            .attr('dy', '.5em')
+            .text(function(d) { return d.data.id });
+}
+
+/**
+     * Calculate the rotation for each label based on its location in the sunburst.
+     * @param {Node} d - the d3 note for which we're computing text rotation
+     * @return {Number} the value that should populate the transform: rotate() statement
+     */
+    function computeTextRotation(d) {
+        var angle = (d.x0 + d.x1) / Math.PI * 90;
+
+        // Avoid upside-down labels
+        return (angle < 120 || angle > 270) ? angle : angle + 180;  // labels as rims
+        //return (angle < 180) ? angle - 90 : angle + 90;  // labels as spokes
+    }
+
+</script>
+
+
+</html>

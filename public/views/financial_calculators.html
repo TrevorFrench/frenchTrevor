@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://trevorfrench.rf.gd/stylesheets/main.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trevor French - Financial Calculators</title>
+</head>
+<body>
+<h1><a href="http://trevorfrench.rf.gd/" class="title">Trevor French</a></h1>
+<div class="bodyDiv">
+<div style="width:800px; margin:0 auto;">
+    <ul class="popList">
+        <div class="mobileMenu">
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">||| Dropdown Menu |||</a>
+                <div class="dropdown-content">
+                    <a href="http://trevorfrench.rf.gd/documents/French_Trevor_Resume.pdf" class="poplink">Resume</a>
+                    <a href="http://trevorfrench.rf.gd/financial_calculators.html" class="poplink">Financial Calculators</a>
+                    <a href="http://trevorfrench.rf.gd/Sunburst.html" class="poplink">Data Gathering</a>
+                    <a href="http://trevorfrench.rf.gd/stockcharts.html" class="poplink">Personal Blog</a>
+                    <a href="http://trevorfrench.rf.gd/contact_information.html" class="poplink">Contact Info</a>
+                </div>
+        </li>
+        </div>
+        <div class="webMenu">
+        <li class="popListItem"><a href="http://trevorfrench.rf.gd/documents/French_Trevor_Resume.pdf" class="poplink">Resume</a></li>
+        <li class="popListItem"><a href="http://trevorfrench.rf.gd/financial_calculators.html" class="poplink">Financial Calculators</a></li>
+        <li class="popListItem"><a href="http://trevorfrench.rf.gd/Sunburst.html" class="poplink">Data Gathering</a></li>
+        <li class="popListItem"><a href="http://trevorfrench.rf.gd/stockcharts.html" class="poplink">Personal Blog</a></li>
+        <li class="popListItem"><a href="http://trevorfrench.rf.gd/contact_information.html" class="poplink">Contact Info</a></li>
+        </div>
+    </ul>
+    </div>
+
+
+<div style="width:800px; margin:0 auto;">
+</br>
+</br>
+</br>
+<h3 style="text-align:center;">Loan Amortization Calculator</h3>
+
+<form class="calculator">
+<div><p><b>Amount to Finance:</b><input type="number" id="loanAmount"></p></div>
+<div><p><b>Down Payment:</b><input type="number" id="downPayment"></p></div>
+<div><p><b>Interest Rate:</b><input type="number" id="interestRate"></p></div>
+<div><p><b>Number of Periods:</b><input type="number" id="Periods"></p></div>
+<div><p><b>Payments per Period:</b><input type="number" id="paymentsPerPeriod"></p></div>
+<div><p><b>Payment Amount:</b><div id="paymentAmount"></div></p></div>
+<button type="button" onclick="calculatePayment()">Calculate</button>
+</form>
+
+<div>
+    <h3 style="text-align:center;">Other Financial Calculators</h3>
+  <div style="float:left">
+  <p><a href src="http://trevorfrench.rf.gd/financial_calculators.html" class="reference">Loan Amortization</a></p>
+  <p><a href src="" class="reference">Gordon Growth Model</a></p>  
+  <p><a href src="" class="reference">Alpha Generation</a></p>
+  <p><a href src="" class="reference">Retirement</a></p>  
+  </div>
+  </div>
+
+
+<script>
+    function calculatePayment() {
+        var amount = document.getElementById('loanAmount').value;
+        console.log(amount);
+        var moneyDown = document.getElementById('downPayment').value;
+        console.log(moneyDown);
+        var rate = document.getElementById('interestRate').value;
+        console.log(rate);
+        var numberPeriods = document.getElementById('Periods').value;
+        console.log(numberPeriods);
+        var paymentsPer = document.getElementById('paymentsPerPeriod').value;
+        console.log(paymentsPer);
+        var n = numberPeriods * paymentsPer;
+        console.log("n: " + n);
+        var i = rate / paymentsPer;
+        console.log("i:" + i);
+        var a = amount - moneyDown;
+        console.log("a:" + a);
+        var dNumerator = (Math.pow((1 + i),n) - 1);
+        console.log("num: " + dNumerator);
+        var dDenominator = ((i * Math.pow(( 1 + i ), n)));
+        console.log("den: " + dDenominator);
+        var d = dNumerator / dDenominator;
+        console.log("d:" + d);
+        var payment = a / d;
+        document.getElementById('paymentAmount').innerHTML = "$"+payment.toFixed(2);
+
+    }
+</script>
+</div>
+</div>
+</body>
+</html>
+		
