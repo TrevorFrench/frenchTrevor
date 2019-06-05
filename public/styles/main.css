@@ -1,8 +1,7 @@
 .calculator input {
     width:100%;
     padding: 15px 0px;
-    margin: auto;
-    border: 15px;
+    margin: 15px;
 }
 
 fieldset {
