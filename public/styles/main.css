@@ -1,11 +1,11 @@
 .calculator input {
     width:100%;
     padding: 15px 0px;
-    margin: 15px 15px 15px 15px;
+    margin: auto;
 }
 
 fieldset {
-  padding: 0px;
+  padding: 10px;
 }
 
 ul {
