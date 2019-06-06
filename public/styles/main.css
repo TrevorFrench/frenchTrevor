@@ -6,6 +6,7 @@
 
 fieldset {
   padding: 10px;
+  background-color: #4CAF50;
 }
 
 ul {
@@ -53,17 +54,17 @@ li a:hover {
 
 a:link.blog, a:visited.blog, a:hover.blog, a:active.blog {
   text-decoration: none;
-color: black;
+  color: black;
   padding: 14px 25px;
   text-align: center;
   display: inline-block;
-background-color: white;
+  background-color: white;
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;
 	border-top: 1px solid black;
 	border-left: 1px solid black;
-    height: 150px;
-    width: 150px;
+  height: 150px;
+  width: 150px;
 }
 /*
 a:hover.poplink, a:active.poplink {
@@ -81,12 +82,12 @@ background-color: #999999;
 
 a:link.title, a:visited.title, a:hover.title, a:active.title {
   text-decoration: none;
-color: black;
+  color: black;
 }
 
 a:link.reference, a:visited.reference, a:hover.reference, a:active.reference {
   text-decoration: none;
-color: blue;
+  color: blue;
 }
 
 h1 {
@@ -98,8 +99,8 @@ h1 {
 }
 
 .bodyDiv {
-       width:800px; 
-       margin:0 auto;
+    width:800px; 
+    margin:0 auto;
   }
 
 /*.popList {
