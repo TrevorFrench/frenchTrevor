@@ -7,6 +7,12 @@
 fieldset {
   padding: 10px;
   background-color: #4CAF50;
+  border: none;
+}
+
+legend {
+background-color: #333;
+color: white;
 }
 
 ul {
