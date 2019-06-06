@@ -6,12 +6,13 @@
 
 fieldset {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #333;
   border: none;
+  color: white;
 }
 
 legend {
-background-color: #333;
+background-color: #4CAF50;
 color: white;
 border-radius: 4px;
 }
