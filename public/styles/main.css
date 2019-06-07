@@ -124,7 +124,7 @@ h1 {
 .bodyDiv {
     width:50%; 
     margin:0 auto;
-    display: inline;
+    display: inline-block;
   }
 
 /*.popList {
