@@ -12,6 +12,7 @@ fieldset {
   color: white;
   width: 80%;
   margin: auto;
+  border-radius: 4px;
 }
 
 legend {
