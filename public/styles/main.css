@@ -101,7 +101,7 @@ background-color: #999999;
 
 a:link.title, a:visited.title, a:hover.title, a:active.title {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 a:link.reference, a:visited.reference, a:hover.reference, a:active.reference {
@@ -112,9 +112,9 @@ a:link.reference, a:visited.reference, a:hover.reference, a:active.reference {
 h1 {
     text-align: center;
     margin:0 auto;
-    color:white;
+    color: white;
     font-size:46px;
-
+    float: left;
 }
 
 .bodyDiv {
