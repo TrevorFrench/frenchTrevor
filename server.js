@@ -149,7 +149,7 @@ do {
 var mailOptions = {
   from: 'byuisupportcenter@byui.edu',
   to: emailList[i] + '@vtext.com,' 
-    + emailList[i] + '@messaging.sprintpcs.com,'
+    //+ emailList[i] + '@messaging.sprintpcs.com,'
     + emailList[i] + '@text.att.net,'
     + emailList[i] + '@tmomail.net,'
     + emailList[i] + '@vmobl.com,',
