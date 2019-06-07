@@ -39,6 +39,7 @@ ul {
 
 li {
   display: inline-block;
+  margin: auto;
 }
 
 li a {
