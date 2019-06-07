@@ -11,6 +11,7 @@ fieldset {
   border: none;
   color: white;
   width: 80%;
+  margin: auto;
 }
 
 legend {
