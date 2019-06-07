@@ -2,6 +2,7 @@
     width:100%;
     padding: 15px 0px;
     margin: auto;
+    border-radius: 4px;
 }
 
 fieldset {
@@ -12,7 +13,7 @@ fieldset {
 }
 
 legend {
-background-color: #333/*#4CAF50*/;
+background-color: #4CAF50;
 color: /*white*/#4CAF50;
 border-radius: 4px;
 }
