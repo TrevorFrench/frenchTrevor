@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="../styles/main.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<title>Trevor French - Data Gathering</title>
+</head>
+<body>
+
+<div style="width:100%; margin:0 auto;">
+    <ul class="popList">
+        <div class="webMenu">
+        <h1><a href="../views/main.html" class="title">Trevor French</a></h1>
+        <li class="popListItem"><a href="../documents/French_Trevor_Resume.pdf" class="poplink">Resume</a></li>
+        <li class="popListItem"><a href="../views/financial_calculators.html" class="poplink">Financial Calculators</a></li>
+        <li class="popListItem"><a href="../views/data_gathering.html" class="poplink">Data Gathering</a></li>
+        <li class="popListItem"><a href="../views/blog.html" class="poplink">Personal Blog</a></li>
+        <li class="popListItem"><a href="../views/index.html" class="poplink">Auto-Texter</a></li>
+        <li class="popListItem"><a href="../views/contactInfo.html" class="poplink">Contact Info</a></li>
+        </div>
+    </ul>
+    </div>
+
+
+<div class="bodyDiv">
+</br>
+</br>
+</br>
+<h3 style="text-align:center;">Collision Detection</h3>
+<script>
+
+var width = 960,
+    height = 500;
+
+var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4}; }),
+    root = nodes[0],
+    color = d3.scale.category10();
+
+root.radius = 0;
+root.fixed = true;
+
+var force = d3.layout.force()
+    .gravity(0.05)
+    .charge(function(d, i) { return i ? 0 : -2000; })
+    .nodes(nodes)
+    .size([width, height]);
+
+force.start();
+
+var svg = d3.select("h3").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.selectAll("circle")
+    .data(nodes.slice(1))
+  .enter().append("circle")
+    .attr("r", function(d) { return d.radius; })
+    .style("fill", function(d, i) { return color(i % 3); });
+
+force.on("tick", function(e) {
+  var q = d3.geom.quadtree(nodes),
+      i = 0,
+      n = nodes.length;
+
+  while (++i < n) q.visit(collide(nodes[i]));
+
+  svg.selectAll("circle")
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; });
+});
+
+svg.on("mousemove", function() {
+  var p1 = d3.mouse(this);
+  root.px = p1[0];
+  root.py = p1[1];
+  force.resume();
+});
+
+function collide(node) {
+  var r = node.radius + 16,
+      nx1 = node.x - r,
+      nx2 = node.x + r,
+      ny1 = node.y - r,
+      ny2 = node.y + r;
+  return function(quad, x1, y1, x2, y2) {
+    if (quad.point && (quad.point !== node)) {
+      var x = node.x - quad.point.x,
+          y = node.y - quad.point.y,
+          l = Math.sqrt(x * x + y * y),
+          r = node.radius + quad.point.radius;
+      if (l < r) {
+        l = (l - r) / l * .5;
+        node.x -= x *= l;
+        node.y -= y *= l;
+        quad.point.x += x;
+        quad.point.y += y;
+      }
+    }
+    return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+  };
+}
+
+</script>
+<p style="font-size:18px">
+    </br>
+This is a D3.js visualization created by Mike Bostock entitled "Collision Detection".
+</br>
+</br>
+<b>Source:</b>
+Bostock, M. (2019, February 20). Collision Detection. Retrieved April 17, 2019, from https://bl.ocks.org/mbostock/3231298
+</p>
+
+<div>
+    <h3 style="text-align:center;">Other Datasets</h3>
+  <div style="float:left">
+  <p><a href="../views/data_gathering.html" class="reference">United States Sex Ratio (2018) - Sunburst</a></p>
+  <p><a href="../views/collision_detection.html" class="reference">Collision Detection</a></p>  
+  <p><a href="../views/balloon_race.html" class="reference">PCT100 - (Top 100 Pest Control Companies in the United States)</a></p>
+  <p><a href src="" class="reference">Cool Chart</a></p>  
+  </div>
+  </div>
+</div>
+
+</body>
+
+
+
+</html>
