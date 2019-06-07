@@ -112,7 +112,7 @@ a:link.reference, a:visited.reference, a:hover.reference, a:active.reference {
 }
 
 h1 {
-    text-align: left;
+    /*text-align: left;*/
     margin:0 auto;
     color: white;
     font-size:46px;
