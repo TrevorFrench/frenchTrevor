@@ -8,12 +8,12 @@ fieldset {
   padding: 10px;
   background-color: #333;
   border: none;
-  color: white;
+  color: /*white*/#4CAF50;
 }
 
 legend {
 background-color: #333/*#4CAF50*/;
-color: white;
+color: /*white*/#4CAF50;
 border-radius: 4px;
 }
 
