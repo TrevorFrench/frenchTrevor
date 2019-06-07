@@ -9,10 +9,6 @@
   float: right;
 }
 
-h1 {
-  float: left;
-  color: white;
-}
 
 fieldset {
   padding: 10px;
@@ -116,7 +112,7 @@ a:link.reference, a:visited.reference, a:hover.reference, a:active.reference {
 h1 {
     text-align: center;
     margin:0 auto;
-    color:black;
+    color:white;
     font-size:46px;
 
 }
