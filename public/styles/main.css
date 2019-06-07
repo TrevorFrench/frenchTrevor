@@ -45,7 +45,7 @@ li a {
   color: white;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+  text-decoration: bold;
 }
 
 /* Change the link color to #111 (black) on hover */
