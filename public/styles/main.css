@@ -159,7 +159,8 @@ html {
   
 @media all and (max-width: 750px) {
   .bodyDiv {
-    width: 100%;
+    width: 95%;
+    margin: auto;
   }
 }
 
