@@ -57,13 +57,10 @@
 <script>
     function calculateStableGordonGrowth() {
         var d = document.getElementById('deeOne').value;
-        console.log(amount);
         var k = document.getElementById('discountRate').value;
-        console.log(moneyDown);
         var g = document.getElementById('growthRate').value;
-        console.log(rate);
         var intrinsicValue = d / (k - g);
-        document.getElementById('paymentAmount').innerHTML = "$"+intrinsicValue.toFixed(2);
+        document.getElementById('intrinsicValue').innerHTML = "$"+intrinsicValue.toFixed(2);
 
     }
 </script>
