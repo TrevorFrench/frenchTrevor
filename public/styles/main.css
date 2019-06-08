@@ -157,6 +157,12 @@ html {
     font-family:"palatino linotype";
 }
   
+@media all and (max-width: 750px) {
+  .bodyDiv {
+    width: 100%;
+  }
+}
+
 /* @media all and (max-width: 750px) {
   html, body {
 margin:0;
