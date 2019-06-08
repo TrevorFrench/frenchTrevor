@@ -348,7 +348,7 @@ input[type=submit]:hover {
 } */
 
 .card::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
 }
 
 /* Track */
@@ -359,7 +359,7 @@ input[type=submit]:hover {
  
 /* Handle */
 .card::-webkit-scrollbar-thumb {
-  background: red; 
+  background: #4CAF50; 
   border-radius: 10px;
 }
 
