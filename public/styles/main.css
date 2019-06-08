@@ -334,4 +334,11 @@ input[type=submit]:hover {
   min-width: 100%;
   min-height: 200px;
   border: 1px solid #333;
+  display: flex;
+}
+
+.card--content {
+  background-color: #e74c3c;
+  min-width: 200px;
+  margin: 5px;
 }
