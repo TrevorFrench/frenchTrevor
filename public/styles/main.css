@@ -306,6 +306,6 @@ input[type=submit]:hover {
   z-index: 1;
 }
 
-a:hover .dropdown-content {
+.popListItem:hover .dropdown-content {
   display: block;
 }
