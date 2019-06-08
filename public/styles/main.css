@@ -335,6 +335,7 @@ input[type=submit]:hover {
   min-height: 200px;
   border: 1px solid #333;
   display: flex;
+  overflow-x: auto;
 }
 
 .card--content {
