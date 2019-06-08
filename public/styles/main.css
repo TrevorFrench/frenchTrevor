@@ -333,4 +333,5 @@ input[type=submit]:hover {
   background-color: #fff;
   min-width: 100%;
   min-height: 200px;
+  border: 1px solid #333;
 }
