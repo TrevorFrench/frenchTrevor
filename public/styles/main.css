@@ -365,5 +365,5 @@ input[type=submit]:hover {
 
 /* Handle on hover */
 .card::-webkit-scrollbar-thumb:hover {
-  background: #4CAF50; 
+  background: #56a546; 
 }
