@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="../styles/main.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trevor French - Financial Calculators</title>
+</head>
+<body>
+
+<div style="width:100%; margin:0 auto;">
+        <div class="webMenu">
+          <h1><a href="../views/main.html" class="title">Trevor French</a></h1>
+          <div class="popListItem"><a href="../documents/French_Trevor_Resume.pdf" class="poplink">Resume</a></div>
+          <div class="popListItem"><a href="../views/financial_calculators.html" class="poplink">Financial Calculators</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div></div>
+          <div class="popListItem"><a href="../views/data_gathering.html" class="poplink">Data Gathering</a></div>
+          <div class="popListItem"><a href="../views/blog.html" class="poplink">Personal Blog</a></div>
+          <div class="popListItem"><a href="../views/index.html" class="poplink">Auto-Texter</a></div>
+          <div class="popListItem"><a href="../views/contactInfo.html" class="poplink">Contact Info</a></div>
+        </div>
+</div>
+
+<div class="bodyDiv">
+
+    <br>
+
+    <fieldset>
+        <legend><b>Loan Payment Calculator</b></legend>
+    <form class="calculator">
+    <div><p><b>Next Year's Expected Annual Dividend Per Share:</b><input type="number" id="deeOne"></p></div>
+    <div><p><b>Discount Rate (Required Rate of Return):</b><input type="number" id="discountRate"></p></div>
+    <div><p><b>Expected Dividend Growth Rate:</b><input type="number" id="growthRate"></p></div>
+    <div><p><b>Intrinsic Value:</b><div id="intrinsicValue"></div></p>
+    <button type="button" onclick="calculateStableGordonGrowth()">Calculate</button>
+    </form>
+    </fieldset>
+
+    <div>
+        <br>
+        <p>Other Financial Calculators</p>
+        <hr>
+        <p><a href src="../views/financial_calculators.html" class="reference">Loan Amortization</a></p>
+        <p><a href src="" class="reference">Gordon Growth Model</a></p>  
+        <p><a href src="" class="reference">Alpha Generation</a></p>
+        <p><a href src="" class="reference">Retirement</a></p>  
+     </div>
+
+</div>
+
+
+
+
+<script>
+    function calculateStableGordonGrowth() {
+        var d = document.getElementById('deeOne').value;
+        console.log(amount);
+        var k = document.getElementById('discountRate').value;
+        console.log(moneyDown);
+        var g = document.getElementById('growthRate').value;
+        console.log(rate);
+        var intrinsicValue = d / (k - g);
+        document.getElementById('paymentAmount').innerHTML = "$"+intrinsicValue.toFixed(2);
+
+    }
+</script>
+</body>
+</html>
+		
