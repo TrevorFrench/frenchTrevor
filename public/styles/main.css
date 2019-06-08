@@ -8,7 +8,6 @@
 .webMenu {
   text-align: center;
   width: 100%;
-  background-color: #4CAF50;
 }
 
 
@@ -314,4 +313,12 @@ input[type=submit]:hover {
 .popListItem {
   position: relative;
   display: inline-block;
+}
+
+.popListItem a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
