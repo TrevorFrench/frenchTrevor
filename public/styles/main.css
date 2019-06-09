@@ -74,17 +74,32 @@ li a {
 	border-left-width: 0px;
 } */
 
-a:link.blog, a:visited.blog, a:hover.blog, a:active.blog {
+a:link.blog, a:visited.blog, a:active.blog {
+  text-decoration: none;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  background-color: #56a546;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+  height: 150px;
+  width: 150px;
+}
+
+ a:hover.blog {
   text-decoration: none;
   color: black;
   padding: 14px 25px;
   text-align: center;
   display: inline-block;
   background-color: #4CAF50;
-	border-right: 1px solid black;
-	border-bottom: 1px solid black;
-	border-top: 1px solid black;
-	border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
   height: 150px;
   width: 150px;
 }
