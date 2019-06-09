@@ -151,7 +151,7 @@ var label = svg.append("text")
     .attr("text-anchor", "end")
     .attr("y", height - 24)
     .attr("x", width)
-    .text(1996);
+    .text(1997);
 
 // Load the data.
 d3.json("../json/defense_space.json", function(nations) {
@@ -163,7 +163,7 @@ d3.json("../json/defense_space.json", function(nations) {
   var dot = svg.append("g")
       .attr("class", "dots")
     .selectAll(".dot")
-      .data(interpolateData(1996))
+      .data(interpolateData(1997))
     .enter().append("circle")
       .attr("class", "dot")
       .style("fill", function(d) { return colorScale(color(d)); })
@@ -207,7 +207,7 @@ d3.json("../json/defense_space.json", function(nations) {
   // After the transition finishes, you can mouseover to change the year.
   function enableInteraction() {
     var yearScale = d3.scale.linear()
-        .domain([1996, 2015])
+        .domain([1997, 2015])
         .range([box.x + 10, box.x + box.width - 10])
         .clamp(true);
 
@@ -236,7 +236,7 @@ d3.json("../json/defense_space.json", function(nations) {
   // Tweens the entire chart by first tweening the year, and then the data.
   // For the interpolated data, the dots and label are redrawn.
   function tweenYear() {
-    var year = d3.interpolateNumber(1996, 2015);
+    var year = d3.interpolateNumber(1997, 2015);
     return function(t) { displayYear(year(t)); };
   }
 
