@@ -319,6 +319,10 @@ input[type=submit]:hover {
   background-color: #4CAF50;
 }
 
+.dropdown-content:hover {
+  background-color: #56a546;
+}
+
 .popListItem:hover {
   background-color: #4CAF50;
 }
