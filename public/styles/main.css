@@ -112,6 +112,10 @@ a:link.reference, a:visited.reference, a:hover.reference, a:active.reference {
   color: blue;
 }
 
+a:link.cardLink, a:visited.cardLink, a:hover.cardLink, a:active.cardLink {
+  text-decoration: none;
+}
+
 h1 {
     /*text-align: left;*/
     margin:0 auto;
