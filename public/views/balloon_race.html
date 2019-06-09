@@ -229,7 +229,7 @@ d3.json("../json/defense_space.json", function(nations) {
   // Tweens the entire chart by first tweening the year, and then the data.
   // For the interpolated data, the dots and label are redrawn.
   function tweenYear() {
-    var year = d3.interpolateNumber(1800, 2009);
+    var year = d3.interpolateNumber(1996, 2015);
     return function(t) { displayYear(year(t)); };
   }
 
