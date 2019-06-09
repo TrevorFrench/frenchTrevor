@@ -81,6 +81,7 @@ text {
 </br>
 <h3 style="text-align:left;">Space/Defense Spending</h3>
 <hr>
+<p align="left">*Note: This visual is still under construction. I am currently working on gathering the necessary data. If you have any leads or would like to contribute, please reach out to me.</p>
 <p id="chart">
         </p>
         <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -95,7 +96,7 @@ function key(d) { return d.name; }
 
 // Chart dimensions.
 var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
-    width = /*960*/750 - margin.right,
+    width = /*960*/800 - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 // Various scales. These domains make assumptions of data, naturally.
@@ -287,7 +288,7 @@ d3.json("../json/defense_space.json", function(nations) {
   <div style="float:left">
   <p><a href="../views/data_gathering.html" class="reference">United States Sex Ratio (2018) - Sunburst</a></p>
   <p><a href="../views/collision_detection.html" class="reference">Collision Detection</a></p> 
-  <p><a href="../views/balloon_race.html" class="reference">PCT100 - (Top 100 Pest Control Companies in the United States)</a></p>
+  <p><a href="../views/balloon_race.html" class="reference">Space/Defense Spending - Balloon Race</a></p>
   <p><a href src="" class="reference">Cool Chart</a></p>  
   </div>
   </div>
