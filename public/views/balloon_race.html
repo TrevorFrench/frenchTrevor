@@ -74,7 +74,7 @@ text {
 </br>
 </br>
 </br>
-<h3 style="text-align:center;">PCT100 - (Top 100 Pest Control Companies in the United States)</h3>
+<h3 style="text-align:center;">Space/Defense Spending</h3>
 
 <p id="chart">
         </p>
@@ -127,7 +127,7 @@ svg.append("text")
     .attr("text-anchor", "end")
     .attr("x", width)
     .attr("y", height - 6)
-    .text("income per capita, inflation-adjusted (dollars)");
+    .text("Defense Spending in Billions (dollars)");
 
 // Add a y-axis label.
 svg.append("text")
@@ -136,7 +136,7 @@ svg.append("text")
     .attr("y", 6)
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
-    .text("life expectancy (years)");
+    .text("Space Spending in Billions (dollars)");
 
 // Add the year label; the value is set on transition.
 var label = svg.append("text")
@@ -200,7 +200,7 @@ d3.json("../json/defense_space.json", function(nations) {
   // After the transition finishes, you can mouseover to change the year.
   function enableInteraction() {
     var yearScale = d3.scale.linear()
-        .domain([1800, 2009])
+        .domain([1996, 2015])
         .range([box.x + 10, box.x + box.width - 10])
         .clamp(true);
 
