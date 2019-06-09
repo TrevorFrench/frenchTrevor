@@ -53,18 +53,21 @@ text {
 
 
 <div style="width:100%; margin:0 auto;">
-    <ul class="popList">
-       <div class="webMenu">
-        <h1><a href="../views/main.html" class="title">Trevor French</a></h1>
-        <li class="popListItem"><a href="../documents/French_Trevor_Resume.pdf" class="poplink">Resume</a></li>
-        <li class="popListItem"><a href="../views/financial_calculators.html" class="poplink">Financial Calculators</a></li>
-        <li class="popListItem"><a href="../views/data_gathering.html" class="poplink">Data Gathering</a></li>
-        <li class="popListItem"><a href="../views/blog.html" class="poplink">Personal Blog</a></li>
-        <li class="popListItem"><a href="../views/index.html" class="poplink">Auto-Texter</a></li>
-        <li class="popListItem"><a href="../views/contactInfo.html" class="poplink">Contact Info</a></li>
+        <div class="webMenu">
+          <h1><a href="../views/main.html" class="title">Trevor French</a></h1>
+          <div class="popListItem"><a href="../documents/French_Trevor_Resume.pdf" class="poplink">Resume</a></div>
+          <div class="popListItem"><a href="../views/financial_calculators.html" class="poplink">Financial Calculators</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div></div>
+          <div class="popListItem"><a href="../views/data_gathering.html" class="poplink">Data Gathering</a></div>
+          <div class="popListItem"><a href="../views/blog.html" class="poplink">Personal Blog</a></div>
+          <div class="popListItem"><a href="../views/index.html" class="poplink">Auto-Texter</a></div>
+          <div class="popListItem"><a href="../views/contactInfo.html" class="poplink">Contact Info</a></div>
         </div>
-    </ul>
-    </div>
+</div>
 
 
 <div class="bodyDiv">
@@ -144,7 +147,7 @@ var label = svg.append("text")
     .text(1800);
 
 // Load the data.
-d3.json("../json/newdata.json", function(nations) {
+d3.json("../json/defense_space.json", function(nations) {
 
   // A bisector since many nation's data is sparsely-defined.
   var bisect = d3.bisector(function(d) { return d[0]; });
@@ -263,14 +266,6 @@ d3.json("../json/newdata.json", function(nations) {
 });
 
 </script>
-<script>
-
-GoogleAnalyticsObject = "ga", ga = function() { ga.q.push(arguments); }, ga.q = [], ga.l = +new Date;
-ga("create", "UA-48272912-3", "ocks.org");
-ga("send", "pageview");
-
-</script>
-<script async="" src="//www.google-analytics.com/analytics.js"></script>
 
 <p style="font-size:18px">
     </br>
@@ -284,9 +279,9 @@ ga("send", "pageview");
 <div>
     <h3 style="text-align:center;">Other Datasets</h3>
   <div style="float:left">
-  <p><a href="http://trevorfrench.rf.gd/Sunburst.html" class="reference">United States Sex Ratio (2018) - Sunburst</a></p>
-  <p><a href="http://trevorfrench.rf.gd/dataVisualization/collision_detection.html" class="reference">Collision Detection</a></p> 
-  <p><a href="http://trevorfrench.rf.gd/dataVisualization/graph.html" class="reference">PCT100 - (Top 100 Pest Control Companies in the United States)</a></p>
+  <p><a href="../views/data_gathering.html" class="reference">United States Sex Ratio (2018) - Sunburst</a></p>
+  <p><a href="../views/collision_detection.html" class="reference">Collision Detection</a></p> 
+  <p><a href="../views/balloon_race.html" class="reference">PCT100 - (Top 100 Pest Control Companies in the United States)</a></p>
   <p><a href src="" class="reference">Cool Chart</a></p>  
   </div>
   </div>
