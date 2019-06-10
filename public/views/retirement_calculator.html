@@ -3,7 +3,7 @@
 <head>
 <link href="../styles/main.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Trevor French - Financial Calculators</title>
+<title>Trevor French - Retirement Calculator</title>
 <link rel="icon" href="../views/iconMain.png" type="image/x-icon">
 </head>
 <body>
@@ -37,15 +37,15 @@
     <br>
 
     <fieldset>
-        <legend><b>Loan Payment Calculator</b></legend>
+        <legend><b>Retirement Calculator</b></legend>
     <form class="calculator">
-    <div><p><b>Amount to Finance:</b><input type="number" id="loanAmount"></p></div>
-    <div><p><b>Down Payment:</b><input type="number" id="downPayment"></p></div>
-    <div><p><b>Interest Rate:</b><input type="number" id="interestRate"></p></div>
-    <div><p><b>Number of Periods:</b><input type="number" id="Periods"></p></div>
-    <b>Payments per Period:</b> <input align="center" type="number" id="paymentsPerPeriod">
-    <div><p><b>Payment Amount:</b><div id="paymentAmount"></div></p></div>
-    <button type="button" onclick="calculatePayment()">Calculate</button>
+    <div><p><b>Current Retirement Savings:</b><input type="number" id="downPayment"></p></div>
+    <div><p><b>Monthly Savings:</b><input type="number" id="loanAmount"></p></div>
+    <div><p><b>Rate of Return:</b><input type="number" id="downPayment"></p></div>
+    <div><p><b>Retirement Salary:</b><input type="number" id="interestRate"></p></div>
+    <div><p><b>Death Age:</b><input type="number" id="Periods"></p></div>
+    <div><p><b>Retirement Age:</b><div id="paymentAmount"></div></p></div>
+    <button type="button" onclick="calculateAge()">Calculate</button>
     </form>
     </fieldset>
 
