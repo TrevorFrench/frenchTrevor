@@ -69,36 +69,8 @@
 
 
 <script>
-// https://observablehq.com/@trevorfrench/stacked-to-grouped-bars@217
-export default function define(runtime, observer) {
-  const main = runtime.module();
-  main.variable(observer()).define(["md"], function(md){return(
-md`# Stacked-to-Grouped Bars
 
-Animations can preserve object constancy, allowing the reader to follow the data across views. See [Heer and Robertson](http://vis.berkeley.edu/papers/animated_transitions/) for more.`
-)});
-  main.variable(observer("viewof layout")).define("viewof layout", ["html"], function(html)
-{
-  const form = html`<form>
-  <label style="margin-right:0.5em;"><input type=radio name=radio value="stacked" checked> Stacked</label>
-  <label style="margin-right:0.5em;"><input type=radio name=radio value="grouped"> Grouped</label>
-</form>`;
-  form.oninput = () => form.value = form.radio.value;
-  form.onchange = () => { // Safari…
-    form.value = form.radio.value;
-    form.dispatchEvent(new CustomEvent("input"));
-  };
-  form.value = form.radio.value;
-  setTimeout(() => {
-    form.value = form.radio.value = "grouped";
-    form.dispatchEvent(new CustomEvent("input"));
-  }, 3000);
-  return form;
-}
-);
-  main.variable(observer("layout")).define("layout", ["Generators", "viewof layout"], (G, _) => G.input(_));
-  main.variable(observer("chart")).define("chart", ["d3","DOM","width","height","y01z","z","x","margin","xAxis","y","yMax","n","y1Max"], function(d3,DOM,width,height,y01z,z,x,margin,xAxis,y,yMax,n,y1Max)
-{
+chart = {
   const svg = d3.select(DOM.svg(width, height));
 
   const rect = svg.selectAll("g")
@@ -149,61 +121,42 @@ Animations can preserve object constancy, allowing the reader to follow the data
 
   return Object.assign(svg.node(), {update});
 }
-);
-  main.variable(observer()).define(["chart","layout"], function(chart,layout){return(
+
 chart.update(layout)
-)});
-  main.variable(observer("xz")).define("xz", ["d3","m"], function(d3,m){return(
-d3.range(m)
-)});
-  main.variable(observer("yz")).define("yz", ["d3","n","bumps","m"], function(d3,n,bumps,m){return(
-d3.range(n).map(() => bumps(m))
-)});
-  main.variable(observer("y01z")).define("y01z", ["d3","n","yz"], function(d3,n,yz){return(
-d3.stack()
+
+xz = d3.range(m) // the x-values shared by all series
+
+yz = d3.range(n).map(() => bumps(m)) // the y-values of each of the n series
+
+y01z = d3.stack()
     .keys(d3.range(n))
   (d3.transpose(yz)) // stacked yz
   .map((data, i) => data.map(([y0, y1]) => [y0, y1, i]))
-)});
-  main.variable(observer("yMax")).define("yMax", ["d3","yz"], function(d3,yz){return(
-d3.max(yz, y => d3.max(y))
-)});
-  main.variable(observer("y1Max")).define("y1Max", ["d3","y01z"], function(d3,y01z){return(
-d3.max(y01z, y => d3.max(y, d => d[1]))
-)});
-  main.variable(observer("x")).define("x", ["d3","xz","margin","width"], function(d3,xz,margin,width){return(
-d3.scaleBand()
+
+  yMax = d3.max(yz, y => d3.max(y))
+
+  y1Max = d3.max(y01z, y => d3.max(y, d => d[1]))
+
+  x = d3.scaleBand()
     .domain(xz)
     .rangeRound([margin.left, width - margin.right])
     .padding(0.08)
-)});
-  main.variable(observer("y")).define("y", ["d3","y1Max","height","margin"], function(d3,y1Max,height,margin){return(
-d3.scaleLinear()
+
+  y = d3.scaleLinear()
     .domain([0, y1Max])
     .range([height - margin.bottom, margin.top])
-)});
-  main.variable(observer("z")).define("z", ["d3","n"], function(d3,n){return(
-d3.scaleSequential(d3.interpolateBlues)
-    .domain([-0.5 * n, 1.5 * n])
-)});
-  main.variable(observer("xAxis")).define("xAxis", ["height","margin","d3","x"], function(height,margin,d3,x){return(
-svg => svg.append("g")
-    .attr("transform", `translate(0,${height - margin.bottom})`)
-    .call(d3.axisBottom(x).tickSizeOuter(0).tickFormat(() => ""))
-)});
-  main.variable(observer("n")).define("n", function(){return(
-5
-)});
-  main.variable(observer("m")).define("m", function(){return(
-58
-)});
-  main.variable(observer("height")).define("height", function(){return(
-500
-)});
-  main.variable(observer("margin")).define("margin", function(){return(
-{top: 0, right: 0, bottom: 10, left: 0}
-)});
-  main.variable(observer("bumps")).define("bumps", function(){return(
+
+  n = 5 // number of series
+
+  m = 58 // number of values per series
+
+  height = 500
+
+  margin = ({top: 0, right: 0, bottom: 10, left: 0})
+
+  // Returns an array of m psuedorandom, smoothly-varying non-negative numbers.
+// Inspired by Lee Byron’s test data generator.
+// http://leebyron.com/streamgraph/
 function bumps(m) {
   const values = [];
 
@@ -230,10 +183,7 @@ function bumps(m) {
 
   return values;
 }
-)});
-  main.variable(observer("d3")).define("d3", ["require"], function(require){return(
-require("d3@5")
-)});
-  return main;
-}
+
+d3 = require("d3@5")
+
 </script>
