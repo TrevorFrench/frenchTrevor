@@ -45,13 +45,14 @@
     <fieldset>
         <legend><b>Retirement Calculator</b></legend>
     <form class="calculator">
-    <div><p><b>Current Retirement Savings:</b><input type="number" id="downPayment"></p></div>
-    <div><p><b>Monthly Savings:</b><input type="number" id="loanAmount"></p></div>
-    <div><p><b>Rate of Return:</b><input type="number" id="downPayment"></p></div>
-    <div><p><b>Retirement Salary:</b><input type="number" id="interestRate"></p></div>
+    <div><p><b>Current Retirement Savings:</b><input type="number" id="currentSavings"></p></div>
+    <div><p><b>Monthly Savings:</b><input type="number" id="monthlySavings"></p></div>
+    <div><p><b>Rate of Return:</b><input type="number" id="rateOfReturn"></p></div>
+    <div><p><b>Retirement Salary:</b><input type="number" id="retirementSalary"></p></div>
     <div><p><b>Current Age:</b><input type="number" id="currentAge"></p></div>
-    <div><p><b>Death Age:</b><input type="number" id="Periods"></p></div>
-    <div><p><b>Retirement Age:</b><div id="paymentAmount"></div></p></div>
+    <div><p><b>Death Age:</b><input type="number" id="deathAge"></p></div>
+    <div><p><b>Net Worth at Death:</b><input type="number" id="deathWorth"></p></div>
+    <div><p><b>Retirement Age:</b><div id="retirementAge"></div></p></div>
     <button type="button" onclick="calculateAge()">Calculate</button>
     </form>
     </fieldset>
@@ -72,30 +73,30 @@
 
 
 <script>
-    function calculatePayment() {
-        var amount = document.getElementById('loanAmount').value;
-        console.log(amount);
-        var moneyDown = document.getElementById('downPayment').value;
-        console.log(moneyDown);
-        var rate = document.getElementById('interestRate').value;
-        console.log(rate);
-        var numberPeriods = document.getElementById('Periods').value;
-        console.log(numberPeriods);
-        var paymentsPer = document.getElementById('paymentsPerPeriod').value;
-        console.log(paymentsPer);
-        var n = numberPeriods * paymentsPer;
-        console.log("n: " + n);
-        var i = rate / paymentsPer;
-        console.log("i:" + i);
-        var a = amount - moneyDown;
-        console.log("a:" + a);
-        var dNumerator = (Math.pow((1 + i),n) - 1);
-        console.log("num: " + dNumerator);
-        var dDenominator = ((i * Math.pow(( 1 + i ), n)));
-        console.log("den: " + dDenominator);
-        var d = dNumerator / dDenominator;
-        console.log("d:" + d);
-        var payment = a / d;
+    function calculateRetirementAge() {
+        var savings = document.getElementById('currentSavings').value;
+        console.log("savings: " + savings);
+        var monthlySavings = document.getElementById('monthlySavings').value;
+        console.log("monthly savings: " + monthlySavings);
+        var rate = document.getElementById('rateOfReturn').value;
+        console.log("rate: " + rate);
+        var retSal = document.getElementById('retirementSalary').value;
+        console.log("retSal: " + retSal);
+        var currAge = document.getElementById('currentAge').value;
+        console.log("age: " + currAge);
+        var deathAge = document.getElementById('deathAge').value;
+        console.log("death age: " + deathAge);
+        var deathWorth = document.getElementById('deathWorth').value;
+        console.log("deathWorth: " + deathWorth);
+
+        var i = 0;
+        var nut = savings;
+        do {
+          nut += (monthlySavings * 12);
+          nut += nut * (1 + rate);
+          age++; 
+        } while (age <= )
+
         document.getElementById('paymentAmount').innerHTML = "$"+payment.toFixed(2);
 
     }
