@@ -36,6 +36,8 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public/views/main.
 
 app.post('/', (req, res) => res.sendFile(path.join(__dirname, 'public/views/main.html')));
 
+app.get('/.well-known/brave-rewards-verification.txt', (req, res) => res.sendFile(path.join(__dirname, '.well-known/brave-rewards-verification.txt')));
+
 app.post('/massTexter', function(req, res) {
 	res.render('massTexter.ejs')});
 
