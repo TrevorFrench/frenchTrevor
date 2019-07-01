@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: frenchtrevor.herokuapp.com
+Token: 7202926276bb258ed36baa654fa51a9d19a7eb0d4677d455b2dc7ecd37255db0
