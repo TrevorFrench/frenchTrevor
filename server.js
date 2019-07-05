@@ -42,7 +42,7 @@ app.post('/massTexter', function(req, res) {
 	res.render('massTexter.ejs')});
 
 app.get('/searchSite', function(req, res) {
-  res.render('https://www.google.com/search?q=site%3A+%22frenchtrevor.herokuapp.com%22')});
+  res.render('https://www.google.com/search?q=site%3A+"frenchtrevor.herokuapp.com"')});
 
 
 app.post("/submit", function(req, res) {
