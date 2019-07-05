@@ -402,13 +402,3 @@ input[type=submit]:hover {
 .card::-webkit-scrollbar-thumb:hover {
   background: #56a546; 
 }
-
-input.gsc-input {
-    border-color: #004220;
-    width:10px;  
-  }
-  input.gsc-search-button {
-    border-color: #004220;
-    background-color: #004220;
-    width:10px;
-  }

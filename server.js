@@ -41,9 +41,6 @@ app.get('/.well-known/brave-rewards-verification.txt', (req, res) => res.sendFil
 app.post('/massTexter', function(req, res) {
 	res.render('massTexter.ejs')});
 
-app.get('/searchSite', function(req, res) {
-  res.render('https://www.google.com/search?q=site+"frenchtrevor.herokuapp.com"')});
-
 
 app.post("/submit", function(req, res) {
 	if(req.body){
