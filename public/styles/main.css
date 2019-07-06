@@ -181,6 +181,10 @@ html {
     width: 95%;
     margin: auto;
   }
+
+  .googleSearch {
+    width: 95%;
+  }
 }
 
 /* @media all and (max-width: 750px) {
