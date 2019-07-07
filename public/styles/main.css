@@ -30,9 +30,9 @@ border: 1px solid #333;
 }
 
 .roundPhoto {
-  height: 15px;
-  width: 15px;
-  border-radius: 1px;
+  height: 35px;
+  width: 35px;
+  border-radius: 10px;
 }
 
 /*ul { */
