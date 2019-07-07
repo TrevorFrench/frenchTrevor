@@ -29,6 +29,12 @@ border-radius: 4px;
 border: 1px solid #333;
 }
 
+.roundPhoto {
+  height: 15px;
+  width: 15px;
+  border-radius: 1px;
+}
+
 /*ul { */
   /*float: right;*/
 /*  list-style-type: none;
