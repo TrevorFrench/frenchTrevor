@@ -56,10 +56,9 @@ https.get('https://blockchain.info/ticker', (resp) => {
   });
 
   // The whole response has been received. Print out the result.
-  let keys = Object.keys(req.body);
   resp.on('end', () => {
     console.log(JSON.parse(data));
-    res.render('CryptoExchange.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + req.body[keys[0]] + "."});
+    res.render('CryptoExchange.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + JSON.parse(data).USD[1] + "."});
   });
 
 }).on("error", (err) => {
