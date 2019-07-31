@@ -1,7 +1,6 @@
 html {
   margin: 0;
   font-family: Verdana, sans-serif;
-  text-decoration-color: #b4b8cd;
 }
 
 .mainWrapper {
@@ -13,7 +12,7 @@ h1 {
   background-color: #282833;
   margin:0 auto;
   border:0;
-  /*color: white;*/
+  color: #b4b8cd;
   font-size:35px;    
   float: left;
   width: 100%;
@@ -30,4 +29,5 @@ body {
 
 p {
   margin: 0;
+  color: #b4b8cd;
 }
