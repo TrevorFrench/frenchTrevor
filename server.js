@@ -42,6 +42,7 @@ app.post('/massTexter', function(req, res) {
 	res.render('massTexter.ejs')});
 
 
+
 app.post("/submit", function(req, res) {
 	if(req.body){
 			let keys = Object.keys(req.body);
