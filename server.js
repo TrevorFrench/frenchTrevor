@@ -44,7 +44,7 @@ app.post('/massTexter', function(req, res) {
 //****CRYPTOEXCHANGE*************
 //*******************************
 //*******************************
-app.post('/cryptoexchange', function(req, res) {
+app.get('/cryptoexchange', function(req, res) {
   const https = require('https');
 
 https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
