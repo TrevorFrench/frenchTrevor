@@ -59,7 +59,7 @@ https.get('https://blockchain.info/ticker', (resp) => {
   resp.on('end', () => {
     console.log(JSON.parse(data));
     let testVar = JSON.parse(data).USD;
-    res.render('CryptoExchange.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + testVar + "."});
+    res.render('CryptoExchange.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + JSON.parse(testVar) + "."});
   });
 
 }).on("error", (err) => {
