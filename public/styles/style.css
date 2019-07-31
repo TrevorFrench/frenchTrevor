@@ -3,6 +3,14 @@
 	margin: auto;
 }
 
+title {
+  background-color: #32323e;
+}
+
+body {
+  background-color: #6e7288;
+}
+
 input[type=text], select {
   width: 100%;
   padding: 12px 20px;
