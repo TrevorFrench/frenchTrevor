@@ -1,3 +1,6 @@
+html {
+  margin: 0;
+}
 .mainWrapper {
 	width: 50%;
 	margin: 0 auto;
