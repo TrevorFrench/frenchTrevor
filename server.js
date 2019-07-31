@@ -58,8 +58,52 @@ https.get('https://blockchain.info/ticker', (resp) => {
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
     console.log(JSON.parse(data));
-    let testVar = JSON.parse(data).USD;
-    res.render('CryptoExchange.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + testVar['15m'] + "."});
+    let USD = JSON.parse(data).USD;
+    let AUD = JSON.parse(data).AUD;
+    let BRL = JSON.parse(data).BRL;
+    let CAD = JSON.parse(data).CAD;
+    let CHF = JSON.parse(data).CHF;
+    let CLP = JSON.parse(data).CLP;
+    let CNY = JSON.parse(data).CNY;
+    let DKK = JSON.parse(data).DKK;
+    let EUR = JSON.parse(data).EUR;
+    let GBP = JSON.parse(data).GBP;
+    let HKD = JSON.parse(data).HKD;
+    let INR = JSON.parse(data).INR;
+    let ISK = JSON.parse(data).ISK;
+    let JPY = JSON.parse(data).JPY;
+    let KRW = JSON.parse(data).KRW;
+    let NZD = JSON.parse(data).NZD;
+    let PLN = JSON.parse(data).PLN;
+    let RUB = JSON.parse(data).RUB;
+    let SEK = JSON.parse(data).SEK;
+    let SGD = JSON.parse(data).SGD;
+    let THB = JSON.parse(data).THB;
+    let TWD = JSON.parse(data).TWD;
+    res.render('CryptoExchange.ejs', {statusMessage:
+      "USD: " + USD['15m'] + "<br>" +
+      "AUD: " + AUD['15m'] + "<br>" +
+      "BRL: " + BRL['15m'] + "<br>" +
+      "CAD: " + CAD['15m'] + "<br>" +
+      "CHF: " + CHF['15m'] + "<br>" +
+      "CLP: " + CLP['15m'] + "<br>" +
+      "CNY: " + CNY['15m'] + "<br>" +
+      "DKK: " + DKK['15m'] + "<br>" +
+      "EUR: " + EUR['15m'] + "<br>" +
+      "GBP: " + GBP['15m'] + "<br>" +
+      "HKD: " + HKD['15m'] + "<br>" +
+      "INR: " + INR['15m'] + "<br>" +
+      "ISK: " + ISK['15m'] + "<br>" +
+      "JPY: " + JPY['15m'] + "<br>" +
+      "KRW: " + KRW['15m'] + "<br>" +
+      "NZD: " + NZD['15m'] + "<br>" +
+      "PLN: " + PLN['15m'] + "<br>" +
+      "RUB: " + RUB['15m'] + "<br>" +
+      "SEK: " + SEK['15m'] + "<br>" +
+      "SGD: " + SGD['15m'] + "<br>" +
+      "THB: " + THB['15m'] + "<br>" +
+      "TWD: " + TWD['15m'] + "<br>" +
+    });
   });
 
 }).on("error", (err) => {
