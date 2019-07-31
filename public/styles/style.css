@@ -5,6 +5,11 @@
 
 h1 {
   background-color: #32323e;
+  margin:0 auto;
+  color: white;
+  font-size:46px;    
+  float: left;
+  width: 100%;
 }
 
 body {
