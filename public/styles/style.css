@@ -6,6 +6,7 @@
 h1 {
   background-color: #32323e;
   margin:0 auto;
+  border:0;
   color: white;
   font-size:46px;    
   float: left;
