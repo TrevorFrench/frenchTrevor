@@ -41,7 +41,33 @@ app.get('/.well-known/brave-rewards-verification.txt', (req, res) => res.sendFil
 app.post('/massTexter', function(req, res) {
 	res.render('massTexter.ejs')});
 
+//****CRYPTOEXCHANGE*************
+//*******************************
+//*******************************
+app.post('/cryptoexchange', function(req, res) {
+  const https = require('https');
 
+https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
+  let data = '';
+
+  // A chunk of data has been recieved.
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  resp.on('end', () => {
+    console.log(JSON.parse(data).explanation);
+  });
+
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+res.render('CryptoExchange.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + "test" + "."});
+});
+//****END CRYPTOEXCHNAGE***************
+//*************************************
+//*************************************
 
 app.post("/submit", function(req, res) {
 	if(req.body){
