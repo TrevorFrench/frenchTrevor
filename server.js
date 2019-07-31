@@ -58,12 +58,12 @@ https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
     console.log(JSON.parse(data).explanation);
+    res.render('CryptoExchange.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + JSON.parse(data).explanation + "."});
   });
 
 }).on("error", (err) => {
   console.log("Error: " + err.message);
 });
-res.render('CryptoExchange.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + "test" + "."});
 });
 //****END CRYPTOEXCHNAGE***************
 //*************************************
