@@ -47,7 +47,7 @@ app.post('/massTexter', function(req, res) {
 app.get('/cryptoexchange', function(req, res) {
   const https = require('https');
 
-https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
+https.get('https://blockchain.info/ticker', (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.
@@ -57,8 +57,8 @@ https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
 
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
-    console.log(JSON.parse(data).explanation);
-    res.render('CryptoExchange.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + JSON.parse(data).explanation + "."});
+    console.log(JSON.parse(data));
+    res.render('CryptoExchange.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + JSON.parse(data).USD + "."});
   });
 
 }).on("error", (err) => {
