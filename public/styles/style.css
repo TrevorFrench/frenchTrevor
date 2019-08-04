@@ -34,7 +34,7 @@ p {
 }
 
 .marquee {
-    width: 400px;
+    width: 100%;
     line-height: 50px;
     background-color: Pink;
     color: Black;
