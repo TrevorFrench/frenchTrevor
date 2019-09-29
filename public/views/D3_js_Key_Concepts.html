@@ -42,6 +42,10 @@
 				.then(function(data){
 				//console.log(data);
 
+				data = data.sort(function(a,b){
+					return a.charles - b.charles;
+				});
+
 				xMinMax = d3.extent(data, function(d){ // find the minimum and maximmum value from the data from the specified field
 					return parseFloat(d.poor);
 				});
