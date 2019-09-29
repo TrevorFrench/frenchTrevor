@@ -145,14 +145,14 @@
 
 				svg.append('text')
 					.attr('x', xScale(xMinMax[0]))
-					.attr('y', yScale(yMinMax[0] + 30))
+					.attr('y', yScale(yMinMax[0]) + 30)
 					.attr('text-anchor', 'middle')
 					.attr('class','axisLabel')
 					.text('More Wealthy');
 
 				svg.append('text')
 					.attr('x', xScale(xMinMax[1]))
-					.attr('y', yScale(yMinMax[0] + 30))
+					.attr('y', yScale(yMinMax[0]) + 30)
 					.attr('text-anchor', 'middle')
 					.attr('class','axisLabel')
 					.text('Less Wealthy');
