@@ -95,6 +95,14 @@
 						return d.charles == 1 ? 1 : 0.3; // essentially an if (?) else (:) statement in javascript
 					}); // 0 through 1 for opacity
 
+				xAxis = d3.axisBottom(xScale);
+
+				xAxisG = svg.append('g')
+					.attr('id','xAxis')
+					.attr('class', 'axis');
+
+				xAxisG.call(xAxis);
+
 			});
 		</script>
 
