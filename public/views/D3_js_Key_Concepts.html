@@ -30,7 +30,7 @@
 		<div id="chart"></div>
 
 		<script type="text/javascript">
-			var width = 1000, height = 500;
+			var margin = 30, var width = 1000, height = 500;
 			var circles;
 
 			var svg = d3.select('#chart')
@@ -42,9 +42,14 @@
 				.then(function(data){
 				//console.log(data);
 
+				xMinMax = d3.extent(data, function(d){ // find the minimum and maximmum value from the data from the specified field
+					return parseFloat(d.poor);
+				});
+				console.log(xMinMax);
+
 				xScale = d3.scaleLinear()
-					.domain([0,30]) // input
-					.range([0,500]); //output (pixels on the screen)
+					.domain([xMinMax[0],xMinMax[1]]) // input
+					.range([margin,width-margin]); //output (pixels on the screen)
 
 				circles = svg.selectAll('.dot')
 					.data(data)
