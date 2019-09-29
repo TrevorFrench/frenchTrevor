@@ -64,8 +64,8 @@
 					.range([2,10]);
 
 				cScale = d3.scaleOrdinal()
-				.domain([0,1])
-				.range(['#333', '#FF6600']);
+					.domain([0,1])
+					.range(['#333', '#FF6600']);
 
 				circles = svg.selectAll('.dot')
 					.data(data)
@@ -87,7 +87,9 @@
 					.attr('fill', function(d){
 						return cScale(d.charles);
 					})
-					.style('opacity', 0.5); // 0 through 1 for opacity
+					.style('opacity', function(d){
+						return d.charles == 1 ? 1 : 0.3; // essentially an if (?) else (:) statement in javascript
+					}); // 0 through 1 for opacity
 
 			});
 		</script>
