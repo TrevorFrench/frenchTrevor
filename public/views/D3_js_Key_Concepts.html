@@ -63,6 +63,10 @@
 					.domain([rMinMax[0],rMinMax[1]])
 					.range([2,10]);
 
+				cScale = d3.scaleOrdinal()
+				.domain([0,1])
+				.range(['#333', '#FF6600']);
+
 				circles = svg.selectAll('.dot')
 					.data(data)
 					.enter()
@@ -80,7 +84,9 @@
 						//console.log(d);
 						return rScale(d.value); // data itself.name of the field / 2
 					})
-					.attr('fill','#000')
+					.attr('fill', function(d){
+						return cScale(d.charles);
+					})
 					.style('opacity', 0.5); // 0 through 1 for opacity
 
 			});
