@@ -124,6 +124,9 @@
 					})
 					.attr('r',function(d){
 						return rScale(d.value);
+					})
+					.attr('fill', function(d){
+						return cScale(d.charles);
 					});
 			}
 
