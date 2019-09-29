@@ -5,7 +5,7 @@
 	<style type="text/css">
 		body{
 			background-color: #ccc;
-			width: 1000px;	
+			width: 100%;	
 		}
 		#chart{
 			background-color: #ccc;
@@ -41,6 +41,7 @@
 					.data(data)
 					.enter()
 					.append('circle')
+					.attr('class', 'dot')
 					.attr('cx',100)
 					.attr('cy',100)
 					.attr('r',5)
