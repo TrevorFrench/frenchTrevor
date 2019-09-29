@@ -37,7 +37,7 @@
 
 		<script type="text/javascript">
 			var margin = 30, width = 1000, height = 500;
-			var circles, xScale, yScale;
+			var circles, xScale, yScale, xAxis, yAxis;
 
 			var svg = d3.select('#chart')
 				.append('svg')
@@ -65,13 +65,13 @@
 
 				xScale = d3.scaleLinear()
 					.domain([xMinMax[0],xMinMax[1]]) // input
-					.range([margin,width-margin]); //output (pixels on the screen)
+					.range([margin + rValues[1],width-margin-rValues[1]]); //output (pixels on the screen)
 				yScale = d3.scaleLinear()
 					.domain([yMinMax[1],yMinMax[0]]) //invert the y scale
-					.range([margin,height-margin]);
+					.range([margin + rValues[1],height-margin-rValues[1]]);
 				rScale = d3.scaleLinear()
 					.domain([rMinMax[0],rMinMax[1]])
-					.range([2,10]);
+					.range([rValues[0],rValues[1]]);
 
 				cScale = d3.scaleOrdinal()
 					.domain([0,1])
