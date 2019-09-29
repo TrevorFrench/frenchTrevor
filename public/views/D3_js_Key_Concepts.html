@@ -90,10 +90,7 @@
 						//console.log(d);
 						return yScale(d.rooms); // data itself.name of the field * 50
 					})
-					.attr('r',function(d){
-						//console.log(d);
-						return rScale(d.value); // data itself.name of the field / 2
-					})
+					.attr('r', 0)
 					.attr('fill', function(d){
 						return cScale(d.charles);
 					})
@@ -116,7 +113,17 @@
 				yAxisG.call(yAxis)
 					.attr('transform', 'translate(30,0)');
 
+				update();
+
 			});
+
+			function update(){
+				circles.transition()
+					.attr('r',function(d){
+						return rScale(d.value);
+					});
+			}
+
 		</script>
 
 </body>
