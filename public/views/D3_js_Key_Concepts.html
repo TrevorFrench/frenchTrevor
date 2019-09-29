@@ -34,7 +34,7 @@
 				.attr('width', width + 'px')
 				.attr('height', height + 'px');
 
-			d3.csv("boston-housing.csv", function(data){
+			d3.csv("boston-housing.csv", function(data,error){
 				//console.log(data);
 
 				circles = svg.selectAll('.dot')
