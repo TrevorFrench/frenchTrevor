@@ -42,6 +42,10 @@
 				.then(function(data){
 				//console.log(data);
 
+				xScale = d3.scaleLinear()
+					.domain([0,30]) // input
+					.range([0,500]); //output (pixels on the screen)
+
 				circles = svg.selectAll('.dot')
 					.data(data)
 					.enter()
@@ -49,7 +53,7 @@
 					.attr('class', 'dot')
 					.attr('cx',function(d){
 						//console.log(d);
-						return d.poor * 30; // data itself.name of the field * 30
+						return xScale(d.poor); // data itself.name of the field * 30
 					})
 					.attr('cy',function(d){
 						//console.log(d);
