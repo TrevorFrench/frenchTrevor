@@ -57,7 +57,7 @@
 					.domain([xMinMax[0],xMinMax[1]]) // input
 					.range([margin,width-margin]); //output (pixels on the screen)
 				yScale = d3.scaleLinear()
-					.domain([yMinMax[0],yMinMax[1]])
+					.domain([yMinMax[1],yMinMax[0]]) //invert the y scale
 					.range([margin,height-margin]);
 				rScale = d3.scaleLinear()
 					.domain([rMinMax[0],rMinMax[1]])
