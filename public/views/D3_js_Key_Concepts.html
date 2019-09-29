@@ -43,10 +43,20 @@
 					.enter()
 					.append('circle')
 					.attr('class', 'dot')
-					.attr('cx',100)
-					.attr('cy',100)
-					.attr('r',5)
+					.attr('cx',function(d){
+						//console.log(d);
+						return d.poor * 30; // data itself.name of the field * 30
+					})
+					.attr('cy',function(d){
+						//console.log(d);
+						return d.rooms * 50; // data itself.name of the field * 50
+					})
+					.attr('r',function(d){
+						//console.log(d);
+						return d.value / 2; // data itself.name of the field / 2
+					})
 					.attr('fill','#000');
+					.style('opacity',0.5); // 0 through 1 for opacity
 
 			});
 		</script>
