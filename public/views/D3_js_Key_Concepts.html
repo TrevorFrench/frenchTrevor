@@ -72,7 +72,7 @@
 				//console.log(xMinMax);
 
 				xScale = d3.scaleLinear()
-					.domain([xMinMax[0],xMinMax[1]]) // input
+					.domain([xMinMax[1],xMinMax[0]]) // input (invert the x scale)
 					.range([margin + rValues[1],width-margin-rValues[1]]); //output (pixels on the screen)
 				yScale = d3.scaleLinear()
 					.domain([yMinMax[1],yMinMax[0]]) //invert the y scale
@@ -106,12 +106,20 @@
 						return d.charles == 1 ? 1 : 0.3; // essentially an if (?) else (:) statement in javascript
 					})										// 0 through 1 for opacity
 					.on('mouseover', function(d){
-						stuff = d.poor;
+						stuff = 'X | poor: ' + d.poor + '<br />';
+						stuff += 'Y | rooms: ' + d.rooms + '<br />';
+						stuff += 'R | value: ' + d.value + '<br />';
+						stuff += 'C | charles: ' + d.charles;
 						d3.select('#tooltip')
-							.style('left', 100)
-							.style('top', 100)
+							.style('left', d3.event.pageX - 100)
+							.style('top', d3.event.pageY - 140)
 							.html(stuff)
 							.style('opacity',0.85);
+					})
+					.on('mouseout',function(){
+						d3.select('#tooltip')
+							.style('left', -1000)
+							.style('opacity',0);
 					})
 					; 
 
