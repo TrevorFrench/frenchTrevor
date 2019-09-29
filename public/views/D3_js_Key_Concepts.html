@@ -27,6 +27,13 @@
 		.axis text{
 			fill: #bbb; /* make sure you use fill instead of color */
 		}
+		#tooltip{
+			position: absolute;
+			background-color: #fff;
+			padding: 20px;
+			border: solid 1px #000;
+			opacity: 0;
+		}
 	</style>
 
 	<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
@@ -34,6 +41,7 @@
 <body>
 
 		<div id="chart"></div>
+		<div id="tooltip"></div>
 
 		<script type="text/javascript">
 			var margin = 30, width = 1000, height = 500, rValues = [2, 15];
@@ -96,7 +104,16 @@
 					})
 					.style('opacity', function(d){
 						return d.charles == 1 ? 1 : 0.3; // essentially an if (?) else (:) statement in javascript
-					}); // 0 through 1 for opacity
+					})										// 0 through 1 for opacity
+					.on('mouseover', function(d){
+						stuff = d.poor;
+						d3.select('#tooltip')
+							.style('left', 100)
+							.style('top', 100)
+							.html(stuff)
+							.style('opacity',0.85);
+					})
+					; 
 
 				xAxis = d3.axisBottom(xScale).tickValues([xMinMax[0],xMinMax[1]]);
 				yAxis = d3.axisLeft(yScale).tickValues([yMinMax[0],yMinMax[1]]);
