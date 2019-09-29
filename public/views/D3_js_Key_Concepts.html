@@ -31,7 +31,7 @@
 
 		<script type="text/javascript">
 			var margin = 30, width = 1000, height = 500;
-			var circles;
+			var circles, xScale, yScale;
 
 			var svg = d3.select('#chart')
 				.append('svg')
@@ -42,7 +42,7 @@
 				.then(function(data){
 				//console.log(data);
 
-				data = data.sort(function(a,b){
+				data = data.sort(function(a,b){		// sorting data so that orange dots are brought to the front
 					return a.charles - b.charles;
 				});
 
