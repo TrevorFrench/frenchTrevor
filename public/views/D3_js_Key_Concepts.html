@@ -34,6 +34,11 @@
 			border: solid 1px #000;
 			opacity: 0;
 		}
+		.axisLabel{
+			fill: #bbb;
+			font: arial, sans-serif;
+			font-size: 10px;
+		}
 	</style>
 
 	<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
@@ -123,7 +128,7 @@
 					})
 					; 
 
-				xAxis = d3.axisBottom(xScale).tickValues([xMinMax[0],xMinMax[1]]);
+				xAxis = d3.axisBottom(xScale).ticks(0);
 				yAxis = d3.axisLeft(yScale).tickValues([yMinMax[0],yMinMax[1]]);
 
 				xAxisG = svg.append('g')
@@ -137,6 +142,20 @@
 					.attr('transform', 'translate(0,' + (height-margin) + ')');
 				yAxisG.call(yAxis)
 					.attr('transform', 'translate(30,0)');
+
+				svg.append('text')
+					.attr('x', xScale(xMinMax[0]))
+					.attr('y', yScale(yMinMax[0] + 30))
+					.attr('text-anchor', 'middle')
+					.attr('class','axisLabel')
+					.text('More Wealthy');
+
+				svg.append('text')
+					.attr('x', xScale(xMinMax[1]))
+					.attr('y', yScale(yMinMax[0] + 30))
+					.attr('text-anchor', 'middle')
+					.attr('class','axisLabel')
+					.text('Less Wealthy');
 
 				update();
 
