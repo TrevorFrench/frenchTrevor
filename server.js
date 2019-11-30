@@ -137,7 +137,7 @@ https.get('https://blockchain.info/ticker', (resp) => {
   console.log("Error: " + err.message);
 });
 });
-//****END FOURTHESTATE**************
+//****END FOURTHESTATE*****************
 //*************************************
 //*************************************
 
