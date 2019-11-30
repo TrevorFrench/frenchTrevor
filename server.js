@@ -108,8 +108,8 @@ https.get('https://newsapi.org/v2/top-headlines?country=us&category=business&api
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
     console.log(JSON.parse(data));
-    let USD = JSON.parse(data).totalResults;
-    res.render('fourthEstate.ejs', {statusMessage:"<br><img src='../views/Bitcoin_logo.svg' width='135px' height='35px'> <br> <br>" + "USD: " + USD + "<br>"});
+    let article = JSON.parse(data).articles[0].title;
+    res.render('fourthEstate.ejs', {statusMessage:"<br><img src='../views/Bitcoin_logo.svg' width='135px' height='35px'> <br> <br>" + "Article 1: " + article + "<br>"});
   });
 
 }).on("error", (err) => {
