@@ -111,7 +111,7 @@ https.get('https://newsapi.org/v2/top-headlines?country=us&category=business&api
     var i;
     var text = "";
     for (i = 0; i < 6; i++) {
-      text += "<br><img src='" + JSON.parse(data).articles[i].urlToImage + "' width='100%' height='10%'> <br> <br>" + "<b>Title: </b>" + JSON.parse(data).articles[i].title + "<br><b>Author: </b>" + JSON.parse(data).articles[i].author + "<br><b>Description: </b>" + JSON.parse(data).articles[i].description + "<br><b>Content: </b>" + JSON.parse(data).articles[i].content + "<br><a href='" + JSON.parse(data).articles[i].url + "'>Click here to read the full story</a>";
+      text += "<br><br><img src='" + JSON.parse(data).articles[i].urlToImage + "' width='100%' height='10%'> <br> <br>" + "<b>Title: </b>" + JSON.parse(data).articles[i].title + "<br><b>Author: </b>" + JSON.parse(data).articles[i].author + "<br><b>Description: </b>" + JSON.parse(data).articles[i].description + "<br><b>Content: </b>" + JSON.parse(data).articles[i].content + "<br><a href='" + JSON.parse(data).articles[i].url + "'>Click here to read the full story</a>";
     }
     
     res.render('fourthEstate.ejs', {statusMessage: text});
