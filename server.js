@@ -111,7 +111,7 @@ https.get('https://newsapi.org/v2/top-headlines?country=us&category=business&api
     var i;
     var text = "";
     for (i = 0; i < 6; i++) {
-      text += "<br><br><img src='" + JSON.parse(data).articles[i].urlToImage + "' width='100%' height='10%'> <br> <br>" + "<b>Title: </b>" + JSON.parse(data).articles[i].title + "<br><b>Author: </b>" + JSON.parse(data).articles[i].author + "<br><b>Description: </b>" + JSON.parse(data).articles[i].description + "<br><b>Content: </b>" + JSON.parse(data).articles[i].content + "<br><a href='" + JSON.parse(data).articles[i].url + "'>Click here to read the full story</a>";
+      text += "<br><br><img src='" + JSON.parse(data).articles[i].urlToImage + "' width='100%' height='10%'><br><br>" + "<b>Title: </b>" + JSON.parse(data).articles[i].title + "<br><b>Author: </b>" + JSON.parse(data).articles[i].author + "<br><b>Description: </b>" + JSON.parse(data).articles[i].description + "<br><b>Content: </b>" + JSON.parse(data).articles[i].content + "<br><a href='" + JSON.parse(data).articles[i].url + "'>Click here to read the full story</a>";
     }
     
     res.render('fourthEstate.ejs', {statusMessage: text});
@@ -125,6 +125,41 @@ https.get('https://newsapi.org/v2/top-headlines?country=us&category=business&api
 //****END FOURTHESTATE*****************
 //*************************************
 //*************************************
+
+//****FOURTHESTATE WSJ***************
+//***********************************
+//***********************************
+app.get('/fourthEstateWSJ', function(req, res) {
+  const https = require('https');
+
+https.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=220300c07f6f4660adff1337374b3861', (resp) => {
+  let data = '';
+
+  // A chunk of data has been recieved.
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  resp.on('end', () => {
+    
+    var i;
+    var text = "";
+    for (i = 0; i < 6; i++) {
+      text += "<br><br><img src='" + JSON.parse(data).articles[i].urlToImage + "' width='100%' height='10%'><br><br>" + "<b>Title: </b>" + JSON.parse(data).articles[i].title + "<br><b>Author: </b>" + JSON.parse(data).articles[i].author + "<br><b>Description: </b>" + JSON.parse(data).articles[i].description + "<br><b>Content: </b>" + JSON.parse(data).articles[i].content + "<br><a href='" + JSON.parse(data).articles[i].url + "'>Click here to read the full story</a>";
+    }
+    
+    res.render('fourthEstate.ejs', {statusMessage: text});
+    
+  });
+
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+});
+//****END FOURTHESTATE WSJ*****************
+//*****************************************
+//*****************************************
 
 app.post("/submit", function(req, res) {
 	if(req.body){
