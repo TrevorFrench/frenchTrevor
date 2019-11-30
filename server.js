@@ -196,6 +196,146 @@ https.get('https://newsapi.org/v2/top-headlines?country=us&category=entertainmen
 //***************************************************
 //***************************************************
 
+//****FOURTHESTATE Health**********************
+//*********************************************
+//*********************************************
+app.get('/fourthEstateHealth', function(req, res) {
+  const https = require('https');
+
+https.get('https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=220300c07f6f4660adff1337374b3861', (resp) => {
+  let data = '';
+
+  // A chunk of data has been recieved.
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  resp.on('end', () => {
+    
+    var i;
+    var text = "";
+    for (i = 0; i < 6; i++) {
+      text += "<br><br><img src='" + JSON.parse(data).articles[i].urlToImage + "' width='100%' height='10%'><br><br>" + "<b>Title: </b>" + JSON.parse(data).articles[i].title + "<br><b>Author: </b>" + JSON.parse(data).articles[i].author + "<br><b>Description: </b>" + JSON.parse(data).articles[i].description + "<br><b>Content: </b>" + JSON.parse(data).articles[i].content + "<br><a href='" + JSON.parse(data).articles[i].url + "'>Click here to read the full story</a>";
+    }
+    
+    res.render('fourthEstate.ejs', {statusMessage: text});
+    
+  });
+
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+});
+//****END FOURTHESTATE Health************************
+//***************************************************
+//***************************************************
+
+//****FOURTHESTATE Science*********************
+//*********************************************
+//*********************************************
+app.get('/fourthEstateScience', function(req, res) {
+  const https = require('https');
+
+https.get('https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=220300c07f6f4660adff1337374b3861', (resp) => {
+  let data = '';
+
+  // A chunk of data has been recieved.
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  resp.on('end', () => {
+    
+    var i;
+    var text = "";
+    for (i = 0; i < 6; i++) {
+      text += "<br><br><img src='" + JSON.parse(data).articles[i].urlToImage + "' width='100%' height='10%'><br><br>" + "<b>Title: </b>" + JSON.parse(data).articles[i].title + "<br><b>Author: </b>" + JSON.parse(data).articles[i].author + "<br><b>Description: </b>" + JSON.parse(data).articles[i].description + "<br><b>Content: </b>" + JSON.parse(data).articles[i].content + "<br><a href='" + JSON.parse(data).articles[i].url + "'>Click here to read the full story</a>";
+    }
+    
+    res.render('fourthEstate.ejs', {statusMessage: text});
+    
+  });
+
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+});
+//****END FOURTHESTATE Science***********************
+//***************************************************
+//***************************************************
+
+//****FOURTHESTATE Sports**********************
+//*********************************************
+//*********************************************
+app.get('/fourthEstateSports', function(req, res) {
+  const https = require('https');
+
+https.get('https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=220300c07f6f4660adff1337374b3861', (resp) => {
+  let data = '';
+
+  // A chunk of data has been recieved.
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  resp.on('end', () => {
+    
+    var i;
+    var text = "";
+    for (i = 0; i < 6; i++) {
+      text += "<br><br><img src='" + JSON.parse(data).articles[i].urlToImage + "' width='100%' height='10%'><br><br>" + "<b>Title: </b>" + JSON.parse(data).articles[i].title + "<br><b>Author: </b>" + JSON.parse(data).articles[i].author + "<br><b>Description: </b>" + JSON.parse(data).articles[i].description + "<br><b>Content: </b>" + JSON.parse(data).articles[i].content + "<br><a href='" + JSON.parse(data).articles[i].url + "'>Click here to read the full story</a>";
+    }
+    
+    res.render('fourthEstate.ejs', {statusMessage: text});
+    
+  });
+
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+});
+//****END FOURTHESTATE Sports************************
+//***************************************************
+//***************************************************
+
+//****FOURTHESTATE Technology******************
+//*********************************************
+//*********************************************
+app.get('/fourthEstateTechnology', function(req, res) {
+  const https = require('https');
+
+https.get('https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=220300c07f6f4660adff1337374b3861', (resp) => {
+  let data = '';
+
+  // A chunk of data has been recieved.
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  resp.on('end', () => {
+    
+    var i;
+    var text = "";
+    for (i = 0; i < 6; i++) {
+      text += "<br><br><img src='" + JSON.parse(data).articles[i].urlToImage + "' width='100%' height='10%'><br><br>" + "<b>Title: </b>" + JSON.parse(data).articles[i].title + "<br><b>Author: </b>" + JSON.parse(data).articles[i].author + "<br><b>Description: </b>" + JSON.parse(data).articles[i].description + "<br><b>Content: </b>" + JSON.parse(data).articles[i].content + "<br><a href='" + JSON.parse(data).articles[i].url + "'>Click here to read the full story</a>";
+    }
+    
+    res.render('fourthEstate.ejs', {statusMessage: text});
+    
+  });
+
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+});
+//****END FOURTHESTATE Technology********************
+//***************************************************
+//***************************************************
+
 app.post("/submit", function(req, res) {
 	if(req.body){
 			let keys = Object.keys(req.body);
