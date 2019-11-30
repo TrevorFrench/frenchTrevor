@@ -94,7 +94,7 @@ https.get('https://blockchain.info/ticker', (resp) => {
 //****FOURTHESTATE***************
 //*******************************
 //*******************************
-app.get('/cryptoexchange', function(req, res) {
+app.get('/fourthEstate', function(req, res) {
   const https = require('https');
 
 https.get('https://blockchain.info/ticker', (resp) => {
