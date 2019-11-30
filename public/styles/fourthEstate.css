@@ -86,7 +86,7 @@ p {
 }*/
 
 .popListItem:hover {
-  background-color: #4CAF50;
+  background-color: gray;
 }
 
 .popListItem {
