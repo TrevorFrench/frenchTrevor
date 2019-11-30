@@ -112,7 +112,9 @@ https.get('https://newsapi.org/v2/top-headlines?country=us&category=business&api
     let author = JSON.parse(data).articles[0].author;
     let description = JSON.parse(data).articles[0].description;
     let content = JSON.parse(data).articles[0].content;
-    res.render('fourthEstate.ejs', {statusMessage:"<br><img src='../views/Bitcoin_logo.svg' width='135px' height='35px'> <br> <br>" + "Title: " + title + "<br>" + "Author: " + author + "<br>" + "Description: " + description + "<br>" + "Content: " + content + "<br>"});
+    let url = JSON.parse(data).articles[0].url;
+    let urlToImage = JSON.parse(data).articles[0].urlToImage;
+    res.render('fourthEstate.ejs', {statusMessage:"<br><img src='" + urlToImage + "' width='135px' height='35px'> <br> <br>" + "Title: " + title + "<br>" + "Author: " + author + "<br>" + "Description: " + description + "<br>" + "Content: " + content + "<br>" + "<p><a href='" + url + "'>Click here to read the full story</a></p>"});
   });
 
 }).on("error", (err) => {
