@@ -97,7 +97,7 @@ https.get('https://blockchain.info/ticker', (resp) => {
 app.get('/fourthEstate', function(req, res) {
   const https = require('https');
 
-https.get('https://blockchain.info/ticker', (resp) => {
+https.get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=220300c07f6f4660adff1337374b3861', (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.
@@ -108,7 +108,7 @@ https.get('https://blockchain.info/ticker', (resp) => {
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
     console.log(JSON.parse(data));
-    let USD = JSON.parse(data).USD;
+    let USD = JSON.parse(data).totalResults;
     let AUD = JSON.parse(data).AUD;
     let BRL = JSON.parse(data).BRL;
     let CAD = JSON.parse(data).CAD;
