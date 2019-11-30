@@ -107,14 +107,20 @@ https.get('https://newsapi.org/v2/top-headlines?country=us&category=business&api
 
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
-    console.log(JSON.parse(data));
+    
+    var i;
+    for (i = 0; i < 6; i++) {
+      text += "<br><img src='" + JSON.parse(data).articles[i].urlToImage + "' width='100%' height='10%'> <br> <br>" + "<b>Title: </b>" + JSON.parse(data).articles[i].title + "<br><b>Author: </b>" + JSON.parse(data).articles[i].author + "<br><b>Description: </b>" + JSON.parse(data).articles[i].description + "<br><b>Content: </b>" + JSON.parse(data).articles[i].content + "<br><p><a href='" + JSON.parse(data).articles[i].url + "'>Click here to read the full story</a></p>";
+    }
+    
     let title = JSON.parse(data).articles[0].title;
     let author = JSON.parse(data).articles[0].author;
     let description = JSON.parse(data).articles[0].description;
     let content = JSON.parse(data).articles[0].content;
     let url = JSON.parse(data).articles[0].url;
-    let urlToImage = JSON.parse(data).articles[0].urlToImage;
-    res.render('fourthEstate.ejs', {statusMessage:"<br><img src='" + urlToImage + "' width='100%' height='10%'> <br> <br>" + "Title: " + title + "<br>" + "Author: " + author + "<br>" + "Description: " + description + "<br>" + "Content: " + content + "<br>" + "<p><a href='" + url + "'>Click here to read the full story</a></p>"});
+    let urlToImage = JSON.parse(data).articles[0].urlToImage;   
+    
+    res.render('fourthEstate.ejs', {statusMessage: text + "<br><img src='" + urlToImage + "' width='100%' height='10%'> <br> <br>" + "Title: " + title + "<br>" + "Author: " + author + "<br>" + "Description: " + description + "<br>" + "Content: " + content + "<br>" + "<p><a href='" + url + "'>Click here to read the full story</a></p>"});
   });
 
 }).on("error", (err) => {
