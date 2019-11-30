@@ -73,11 +73,11 @@ p {
 
 .popListItem:hover .dropdown-content {
   display: block;
-  background-color: #4CAF50;
+  background-color: #333;
 }
 
 .dropList:hover {
-  background-color: #56a546;
+  background-color: gray;
 }
 
 /*.dropList {
