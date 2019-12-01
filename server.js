@@ -112,7 +112,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=M
     let textTwo = "";
     var x;
     for (x in text) {
-    textTwo += text[x];
+    textTwo += text[x]['4. close'];
     }
 
     console.log(textTwo);
