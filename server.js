@@ -184,7 +184,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
     
-    res.render('frenchsFinancialData.ejs', {statusMessage: "Downloaded Successfully."});
+    res.render('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=' + req.body.ticker + '&apikey=2XZVVF334ODD3HNT&datatype=csv', {statusMessage: "Downloaded Successfully."});
     
   });
 
