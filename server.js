@@ -108,7 +108,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=M
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
 
-    let textTwo = "<form name='form1' method='POST' action='/frenchsFinancialDataResp'><input type='text' name='ticker'><input type='submit'></form><form name='form2' method='POST' action='/frenchsFinancialDataCSV'><input type='text' name='ticker'><input type='submit'></form>";
+    let textTwo = "<b>Insert ticker for daily price data:</b><br><form name='form1' method='POST' action='/frenchsFinancialDataResp'><input type='text' name='ticker'><input type='submit'></form><b>Insert ticker to download price data CSV:</b><br><form name='form2' method='POST' action='/frenchsFinancialDataCSV'><input type='text' name='ticker'><input type='submit'></form>";
     
     res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
     
