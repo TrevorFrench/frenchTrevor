@@ -169,12 +169,8 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
 //******************************************
 //******************************************
 app.post('/frenchsFinancialDataCSV', function(req, res) {
-  const https = require('https');
 
   console.log(req.body.ticker);
-  
-https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=' + req.body.ticker + '&apikey=2XZVVF334ODD3HNT&datatype=csv', (resp) => {
-  let data = '';
 
   // A chunk of data has been recieved.
   resp.on('data', (chunk) => {
@@ -184,13 +180,14 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
     
-    res.send('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=' + req.body.ticker + '&apikey=2XZVVF334ODD3HNT&datatype=csv');
+    let textTwo = "<a href='https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=" + req.body.ticker + "&apikey=2XZVVF334ODD3HNT&datatype=csv>Download " + req.body.ticker + " here.</a>";
+    
+    res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
     
   });
 
 }).on("error", (err) => {
   console.log("Error: " + err.message);
-});
 });
 //****FRENCH'S Financial Data CSV*************
 //********************************************
