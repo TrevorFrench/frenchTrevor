@@ -108,10 +108,10 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=M
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
 
-    let text = JSON.parse(data);
-    let textTwo = text[0];
+    let text = JSON.parse(data)['Meta Data'];
+
     
-    res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
+    res.render('frenchsFinancialData.ejs', {statusMessage: text});
     
   });
 
