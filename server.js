@@ -171,7 +171,8 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
 app.get('/frenchsFinancialDataResp', function(req, res) {
   const https = require('https');
 
-        var queryStart = url.indexOf("?") + 1,
+        var url = window.location.href,
+            queryStart = url.indexOf("?") + 1,
             queryEnd   = url.length + 1,
             query = url.substr(queryStart + 6, queryEnd - 1);
   
