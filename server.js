@@ -130,7 +130,7 @@ app.post('/frenchsFinancialDataResp', function(req, res) {
 
   console.log(req.body.ticker);
   
-https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + req.body.ticker + 'MSFT&apikey=2XZVVF334ODD3HNT', (resp) => {
+https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + req.body.ticker + '&apikey=2XZVVF334ODD3HNT', (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.
