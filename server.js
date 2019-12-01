@@ -91,10 +91,41 @@ https.get('https://blockchain.info/ticker', (resp) => {
 //*************************************
 //*************************************
 
-//****FRENCH'S Financial Data***************
+//****FRENCH'S Financial Data MAIN**********
 //******************************************
 //******************************************
 app.get('/frenchsFinancialData', function(req, res) {
+  const https = require('https');
+
+https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=2XZVVF334ODD3HNT', (resp) => {
+  let data = '';
+
+  // A chunk of data has been recieved.
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  resp.on('end', () => {
+
+    let textTwo = "<form name='form1' method='GET' action='/frenchsFinancialDataResp'><input type='text' name='ticker'><input type='submit'></form>";
+    
+    res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
+    
+  });
+
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+});
+//****FRENCH'S Financial Data MAIN************
+//********************************************
+//********************************************
+
+//****FRENCH'S Financial Data***************
+//******************************************
+//******************************************
+app.get('/frenchsFinancialDataResp', function(req, res) {
   const https = require('https');
 
 https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=2XZVVF334ODD3HNT', (resp) => {
