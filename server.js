@@ -171,20 +171,10 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
 app.post('/frenchsFinancialDataCSV', function(req, res) {
 
   console.log(req.body.ticker);
-
-  // A chunk of data has been recieved.
-  resp.on('data', (chunk) => {
-    data += chunk;
-  });
-
-  // The whole response has been received. Print out the result.
-  resp.on('end', () => {
     
     let textTwo = "<a href='https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=" + req.body.ticker + "&apikey=2XZVVF334ODD3HNT&datatype=csv>Download " + req.body.ticker + " here.</a>";
     
     res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
-    
-  });
 
 }).on("error", (err) => {
   console.log("Error: " + err.message);
