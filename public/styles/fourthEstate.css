@@ -101,3 +101,8 @@ p {
   padding: 14px 16px;
   text-decoration: none;
 }
+
+a:link.title, a:visited.title, a:hover.title, a:active.title {
+  text-decoration: none;
+  color: white;
+}
