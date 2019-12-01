@@ -171,20 +171,13 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
 app.get('/frenchsFinancialDataResp', function(req, res) {
   const https = require('https');
 
-    function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-    }
-
-    var tick = getUrlVars()["ticker"];
-    console.log(tick);
+        var queryStart = url.indexOf("?") + 1,
+            queryEnd   = url.length + 1,
+            query = url.substr(queryStart + 6, queryEnd - 1),
   
-  console.log(req.body.ticker);
+  console.log(query);
   
-https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + req.body.ticker + '&outputsize=full&apikey=2XZVVF334ODD3HNT', (resp) => {
+https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + query + '&outputsize=full&apikey=2XZVVF334ODD3HNT', (resp) => {
   let data = '';
   
 
