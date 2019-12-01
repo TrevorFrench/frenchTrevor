@@ -108,7 +108,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=M
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
 
-    let textTwo = "<form name='form1' method='GET' action='/frenchsFinancialDataResp'><input type='text' name='ticker'><input type='submit'></form>";
+    let textTwo = "<form name='form1' method='POST' action='/frenchsFinancialDataResp'><input type='text' name='ticker'><input type='submit'></form>";
     
     res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
     
@@ -125,7 +125,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=M
 //****FRENCH'S Financial Data***************
 //******************************************
 //******************************************
-app.get('/frenchsFinancialDataResp', function(req, res) {
+app.post('/frenchsFinancialDataResp', function(req, res) {
   const https = require('https');
   let keysMain = Object.keys(req.body);
   
