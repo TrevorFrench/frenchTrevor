@@ -102,7 +102,7 @@ p {
   text-decoration: none;
 }
 
-a:link.title, a:visited.title, a:hover.title, a:active.title {
+a:link.h1, a:visited.h1, a:hover.h1, a:active.h1 {
   text-decoration: none;
   color: white;
 }
