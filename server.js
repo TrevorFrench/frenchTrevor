@@ -111,8 +111,9 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=M
     let text = JSON.parse(data)['Time Series (Daily)'];
     let textTwo = "";
     var x;
+    var keys = Object.keys(text);
     for (x in text) {
-    textTwo += text[x]['4. close'];
+    textTwo += keys[x] + ": " + text[x]['4. close'] + "<br>";
     }
 
     console.log(textTwo);
