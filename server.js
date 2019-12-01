@@ -109,7 +109,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=M
   resp.on('end', () => {
 
     let text = JSON.parse(data)['Meta Data'][0];
-
+    console.log(text);
     
     res.render('frenchsFinancialData.ejs', {statusMessage: text});
     
