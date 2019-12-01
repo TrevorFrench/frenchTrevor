@@ -129,7 +129,10 @@ app.get('/frenchsFinancialDataResp', function(req, res) {
   const https = require('https');
   let keysMain = Object.keys(req.body);
   
-https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + req.body[keysMain[0]] + '&apikey=2XZVVF334ODD3HNT', (resp) => {
+  console.log(keysMain);
+  //' + req.body[keysMain[0]] + '
+  
+https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=2XZVVF334ODD3HNT', (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.
