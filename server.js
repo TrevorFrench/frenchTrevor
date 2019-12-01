@@ -108,7 +108,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=M
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
 
-    let textTwo = "<form name='form1' method='POST' action='/frenchsFinancialDataResp'><input type='text' name='ticker'><input type='submit'></form>";
+    let textTwo = "<form name='form1' method='POST' action='/frenchsFinancialDataResp'><input type='text' name='ticker'><input type='submit'></form><form name='form2' method='POST' action='/frenchsFinancialDataCSV'><input type='text' name='ticker'><input type='submit'></form>";
     
     res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
     
@@ -162,6 +162,37 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
 });
 });
 //****FRENCH'S Financial Data*****************
+//********************************************
+//********************************************
+
+//****FRENCH'S Financial Data CSV***********
+//******************************************
+//******************************************
+app.post('/frenchsFinancialDataCSV', function(req, res) {
+  const https = require('https');
+
+  console.log(req.body.ticker);
+  
+https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=' + req.body.ticker + '&apikey=2XZVVF334ODD3HNT&datatype=csv', (resp) => {
+  let data = '';
+
+  // A chunk of data has been recieved.
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  resp.on('end', () => {
+    
+    res.render('frenchsFinancialData.ejs', {statusMessage: "Downloaded Successfully."});
+    
+  });
+
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+});
+//****FRENCH'S Financial Data CSV*************
 //********************************************
 //********************************************
 
