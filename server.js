@@ -139,16 +139,19 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
     var x;
     let i = 0;
     console.log(text);
-    var keys = Object.keys(text);
-    for (x in text) {
-    textTwo += keys[i] + ": " + text[x]['4. close'] + "<br>";
-    i++;
+    if (text!= undefined){
+      var keys = Object.keys(text);
+      for (x in text) {
+      textTwo += keys[i] + ": " + text[x]['4. close'] + "<br>";
+      i++;
+      }
+  
+      console.log(textTwo);
+      
+      res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
+    } else {
+      res.render('frenchsFinancialData.ejs', {statusMessage: "Error"});
     }
-
-    console.log(textTwo);
-    
-    res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
-    
   });
 
   
