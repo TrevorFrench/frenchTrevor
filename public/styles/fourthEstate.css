@@ -9,8 +9,7 @@ html {
 }
 
 .rightWrapper {
-	position: absolute;
-  right: 0px;
+	float: right;
   width: 50%;
 }
 
