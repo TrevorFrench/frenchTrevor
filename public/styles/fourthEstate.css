@@ -135,7 +135,7 @@ a:link.title, a:visited.title, a:hover.title, a:active.title {
   text-align: left;
   width: 100%;
   position: fixed;
-  bottom: 20%;
+  bottom: 2%;
 }
 
 .container{
