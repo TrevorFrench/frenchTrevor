@@ -131,7 +131,6 @@ a:link.title, a:visited.title, a:hover.title, a:active.title {
 	position: absolute;
   left: 0px;
   width: 100%;
-  display: inline-block;
 }
 
 .rightWrapper {
