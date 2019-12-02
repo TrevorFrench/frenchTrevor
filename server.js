@@ -155,7 +155,9 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
     
     res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
     
-  });
+  }).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
 
 }).on("error", (err) => {
   console.log("Error: " + err.message);
