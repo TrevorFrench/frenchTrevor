@@ -129,8 +129,8 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
   resp.on('data', (chunk) => {
     data += chunk;
   });
-
-  try {
+  console.log(data);
+  
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
 
@@ -149,11 +149,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
     res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
     
   });
-  }
-  catch(error){
-    console.error(error);
-    res.render('frenchsFInancialData.ejs', {statusMessage: "Error"});
-  }
+  
 }).on("error", (err) => {
   console.log("Error: " + err.message);
 });
