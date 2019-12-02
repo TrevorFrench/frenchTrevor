@@ -138,6 +138,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
     let textTwo = "";
     var x;
     let i = 0;
+    console.log(text);
     var keys = Object.keys(text);
     for (x in text) {
     textTwo += keys[i] + ": " + text[x]['4. close'] + "<br>";
