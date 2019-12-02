@@ -16,14 +16,6 @@ app.use(fileUpload({
     tempFileDir : '/tmp/'
 }));
 
-
-
-//const csv = require('csv-parser'); //for parsing the phone number csv's
-//const fs = require('fs');
-
-//var upload = require("express-fileupload"); //file upload module
-//app.use(upload())
-
 // const port = 3000; // which port are you listening on?
 const http = require('http');
 const { parse } = require('querystring');
@@ -155,7 +147,9 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
     
     res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
     
-  });
+  }).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
 
 }).on("error", (err) => {
   console.log("Error: " + err.message);
@@ -181,8 +175,6 @@ app.get('/frenchsFinancialDataResp', function(req, res) {
 https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + query + '&outputsize=full&apikey=2XZVVF334ODD3HNT', (resp) => {
   let data = '';
   
-
-
   // A chunk of data has been recieved.
   resp.on('data', (chunk) => {
     data += chunk;
@@ -514,20 +506,6 @@ transporter.sendMail(mailOptions, function(error, info){
 
 
 	}
-	/*res.send("success!");
-	if(req.files){
-		var file = req.files.filename,
-		filename = file.name;
-		file.mv("./upload/"+filename,function(err){
-			if(err){
-					console.log(err)
-					res.send("error occurred")
-				}
-				else{
-						res.send("failure")
-				}
-		})
-	}*/
 });
 
 //******************** massTexter ********************
@@ -535,11 +513,6 @@ transporter.sendMail(mailOptions, function(error, info){
 app.post("/submitMassText", function(req, res) {
 	//console.log(req.body);
     console.log(req.files);
-
-
-  /* if (Object.keys(req.files).length == 0) {
-    return res.status(400).send('No files were uploaded.');
-  } */
 
   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
  	let csvee = req.files.csvee;
@@ -580,9 +553,6 @@ app.post("/submitMassText", function(req, res) {
     		var i = 0;
     		var n = emailList.length;
 
-			
-
-
 do {
 var mailOptions = {
   from: 'byuisupportcenter@byui.edu',
@@ -608,154 +578,6 @@ i++;
 			res.render('pathOne.ejs', {statusMessage: "Congratulations! Your message was successfully sent to: " + "var/emailList" + "."});
 });
 
-/*app.get("/submit", function(req, res) {
-	if(req.body){
-			res.send(body);
-	}
-	/*if(req.files){
-		//var file = req.files.filename,
-		//filename = file.name;
-		 var emailList = new Array();
-			fs.createReadStream("./upload/"+filename)  
-  			.pipe(csv())
-  			.on('data', (row) => {
-    			console.log('Displaying a row',row);
-    			console.log("Data: ", parseInt(row.Number));
-    			emailList.push(parseInt(row.Number));
-  								})
-  		.on('end', () => {
-    		console.log('CSV file successfully processed');
-    		console.log("Displaying the CSVParser:",emailList);
-
-		var n = emailList.length;
-		var i = 0; 
-
-		res.send("Success! Length: " + n);
-		});
-
-  }
-});*/
-
 app.listen(app.get("port"), function () { // listens on the port and displays a message to the console
 	console.log("Now listening for connection on port: " + app.get("port"));
 });
-
-// ****************************************************
-// ******************** nodeMailer ********************
-// ****************************************************
-
-/* var nodemailer = require('nodemailer');
-const csv = require('csv-parser');
-const fs = require('fs');
-var transporter = nodemailer.createTransport({
-  service: 'Outlook365',
-  auth: {
-    user: 'trevorfrench@byui.edu',
-    pass: 'xxx'
-  }
-});
- 
-var emailList = new Array();
-  function sendText() {
-fs.createReadStream('data.csv')  
-  .pipe(csv())
-  .on('data', (row) => {
-    console.log('Displaying a row',row);
-    console.log("Data: ", parseInt(row.Number));
-    emailList.push(parseInt(row.Number));
-  })
-  .on('end', () => {
-    console.log('CSV file successfully processed');
-    console.log("Displaying the CSVParser:",emailList);
-
-var n = emailList.length;
-var i = 0;
-
-do {
-var mailOptions = {
-  from: 'byuisupportcenter@byui.edu',
-  to: emailList[i] + '@vtext.com,' 
-    + emailList[i] + '@messaging.sprintpcs.com,'
-    + emailList[i] + '@text.att.net,'
-    + emailList[i] + '@tmomail.net,'
-    + emailList[i] + '@vmobl.com,',
-  subject: '',
-  text: 'This is a reminder that Monday is a holiday and the BSC will not be open.'
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
-console.log(emailList[i] + '@vtext.com'); 
-i++;
-} while (i < n);
-  });
-}
-
-// **************************************************
-// ******************** nodeIMAP ********************
-// **************************************************
-
-/*    inspect = require('util').inspect;
-
-var imap = new Imap({
-  user: 'trevorf96@gmail.com',
-  password: 'xxx',
-  host: 'imap.gmail.com',
-  port: 993,
-  tls: true
-});
-
-function openInbox(cb) {
-  imap.openBox('INBOX', true, cb);
-}
-
-imap.once('ready', function() {
-  openInbox(function(err, box) {
-    if (err) throw err;
-    var f = imap.seq.fetch('1:3', {
-      bodies: 'HEADER.FIELDS (FROM TO SUBJECT DATE)',
-      struct: true
-    });
-    f.on('message', function(msg, seqno) {
-      console.log('Message #%d', seqno);
-      var prefix = '(#' + seqno + ') ';
-      msg.on('body', function(stream, info) {
-        var buffer = '';
-        stream.on('data', function(chunk) {
-          buffer += chunk.toString('utf8');
-        });
-        stream.once('end', function() {
-          console.log(prefix + 'Parsed header: %s', inspect(Imap.parseHeader(buffer)));
-        });
-      });
-      msg.once('attributes', function(attrs) {
-        console.log(prefix + 'Attributes: %s', inspect(attrs, false, 8));
-      });
-      msg.once('end', function() {
-        console.log(prefix + 'Finished');
-      });
-    });
-    f.once('error', function(err) {
-      console.log('Fetch error: ' + err);
-    });
-    f.once('end', function() {
-      console.log('Done fetching all messages!');
-      imap.end();
-    });
-  });
-});
-
-imap.once('error', function(err) {
-  console.log(err);
-});
-
-imap.once('end', function() {
-  console.log('Connection ended');
-});
-
-imap.connect(); */
