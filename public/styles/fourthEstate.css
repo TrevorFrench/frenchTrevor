@@ -135,7 +135,7 @@ a:link.title, a:visited.title, a:hover.title, a:active.title {
 .rightWrapper {
   text-align: left;
   width: 100%;
-  position: fixed;
+  position: relative;
   top: 62%;
 }
 
