@@ -128,8 +128,6 @@ a:link.title, a:visited.title, a:hover.title, a:active.title {
 
 @media all and (max-width: 750px) {
   .leftWrapper {
-	position: absolute;
-  left: 0px;
   width: 100%;
 }
 
