@@ -138,6 +138,10 @@ a:link.title, a:visited.title, a:hover.title, a:active.title {
   height: 40%;
 }
 
+.container{
+  height: 100%;
+}
+
 .content{
   padding: 25%;
 }
