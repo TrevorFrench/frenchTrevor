@@ -131,7 +131,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
   });
   console.log(data);
   
-  if(data != null && data != '') {
+  if(JSON.parse(data) != null && JSON.parse(data) != '') {
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
 
