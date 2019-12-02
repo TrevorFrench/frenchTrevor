@@ -135,8 +135,7 @@ a:link.title, a:visited.title, a:hover.title, a:active.title {
 }
 
 .rightWrapper {
-  width: 50%;
-  display: inline-block;
+  display: block;
   text-align: left;
 }
 
