@@ -129,13 +129,13 @@ a:link.title, a:visited.title, a:hover.title, a:active.title {
 @media all and (max-width: 750px) {
   .leftWrapper {
   width: 100%;
-  height: 60%;
 }
 
 .rightWrapper {
   text-align: left;
   width: 100%;
-  height: 40%;
+  position: fixed;
+  bottom: 20%;
 }
 
 .container{
