@@ -8,9 +8,8 @@ html {
 	margin: 0 auto;
 }
 
-.rightWrapper {
-	float: right;
-  width: 50%;
+* {
+  box-sizing: border-box;
 }
 
 .box {
