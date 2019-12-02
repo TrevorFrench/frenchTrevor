@@ -130,8 +130,8 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='
     data += chunk;
   });
   console.log(data);
-  
-  if(JSON.parse(data) != null && JSON.parse(data) != '') {
+  let text = JSON.parse(data)['Time Series (Daily)'];
+  if(text != null && text != '') {
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
 
