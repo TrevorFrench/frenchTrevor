@@ -210,14 +210,14 @@ html {
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
-  padding: 20px;
+  padding: 14px;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .sidebarMenuInner li span {
   display: block;
-  font-size: 14px;
+  font-size: 10px;
   color: rgba(255, 255, 255, 0.50);
 }
 
