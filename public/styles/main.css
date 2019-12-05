@@ -187,7 +187,7 @@ html {
 .googleSearch {
   width: 25%;
   display: inline;
-  float: right;
+  float: left;
   position: relative;
 }
 
