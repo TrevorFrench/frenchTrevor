@@ -185,10 +185,7 @@ html {
 }
 
 .googleSearch {
-  width: 25%;
-  display: inline;
-  float: left;
-  position: relative;
+  width: 100%;
 }
 
 #sidebarMenu {
