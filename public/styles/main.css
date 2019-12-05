@@ -190,18 +190,8 @@ html {
   float: right;
   position: relative;
 }
-  
-@media all and (max-width: 750px) {
-  .bodyDiv {
-    width: 95%;
-    margin: auto;
-  }
 
-  .googleSearch {
-    width: 95%;
-  }
-  
-  #sidebarMenu {
+#sidebarMenu {
   height: 100%;
   position: fixed;
   left: 0;
@@ -315,6 +305,17 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   transform: rotate(-135deg);
   margin-top: -9px;
 }
+  
+@media all and (max-width: 750px) {
+  .bodyDiv {
+    width: 95%;
+    margin: auto;
+  }
+
+  .googleSearch {
+    width: 95%;
+  }
+  
 }
 
 /* @media all and (max-width: 750px) {
