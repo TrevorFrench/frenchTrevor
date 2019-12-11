@@ -318,7 +318,7 @@ input[type=submit]:hover {
   display: inline-block;
 }
 
-.poplink {
+.popListItem a{
   display: block;
   color: white;
   text-align: center;
