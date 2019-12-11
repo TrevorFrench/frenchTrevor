@@ -309,11 +309,6 @@ input[type=submit]:hover {
   background-color: #56a546;
 }
 
-/*.dropList {
-  width: 100%;
-  margin: 0;
-}*/
-
 .popListItem:hover {
   background-color: #4CAF50;
 }
@@ -323,7 +318,7 @@ input[type=submit]:hover {
   display: inline-block;
 }
 
-.popListItem a{
+.poplink {
   display: block;
   color: white;
   text-align: center;
