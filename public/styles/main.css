@@ -48,7 +48,7 @@ a:link.blog, a:visited.blog, a:active.blog {
   color: black;
   padding: 14px 25px;
   text-align: center;
-  display: block;
+  display: inline;
   position: relative;
   background-color: #4CAF50;
 	border-right: 1px solid black;
