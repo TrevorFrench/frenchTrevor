@@ -74,9 +74,23 @@
  <br>
  <br>
  <h3>ECOLAB<hr></h3>
- <p>
-<iframe src="https://www.google.com/maps/d/u/0/embed?mid=12AqO_9U-d26wHDRt5OFfalYDTM12kIPH" width="640" height="480"></iframe>
-</p>
+  
+  <script>
+     function myFunction() {
+     var x = document.getElementById("myDIV");
+     if (x.style.display === "none") {
+       x.style.display = "block";
+     } else {
+       x.style.display = "none";
+     }
+   }
+  </script>
+ 
+ <button onclick="myFunction();">Click Me</button>
+ 
+ <div id="myDIV">  
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=12AqO_9U-d26wHDRt5OFfalYDTM12kIPH" width="640" height="480"></iframe>
+ </div>
  <br>
  <br>
 </div>
