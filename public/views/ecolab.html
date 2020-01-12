@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Trevor French</title>
 <link rel="icon" href="../views/iconMain.png" type="image/x-icon">
+<script src="../scripts/js.js"></script>
 </head>
 <body>
 
@@ -75,28 +76,11 @@
  <br>
  <h3>ECOLAB<hr></h3>
   
-  <script>
-     function myFunction() {
-     var y = document.getElementById("myText").value;
-     var x = document.getElementById("myDIV");
-     var z = document.getElementById("yourDIV");
-     var zz = document.getElementById("loginDIV");
-     if (y === "BillingsSWMT") {
-         if (x.style.display === "none") {
-           x.style.display = "block";
-         } else {
-           x.style.display = "none";
-         }
-       zz.style.display= "none";
-     } else {
-      z.style.display = "block";
-     }
-     
-     }
-  </script>
+  
   <div id="loginDIV">
+   Please enter your password:
    <input type="text" id="myText">
-   <button onclick="myFunction();">Click Me</button>
+   <button onclick="myFunction();">Submit</button>
    <div id="yourDIV" style="display: none;">
     <p> That is an incorrect password.</p>
    </div>
