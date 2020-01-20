@@ -218,7 +218,7 @@ app.post('/frenchsFinancialDataCSV', function(req, res) {
 
   console.log(req.body.ticker);
     
-    let textTwo = "<a href='https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=" + req.body.ticker + "&apikey=2XZVVF334ODD3HNT&datatype=csv'>Download " + req.body.ticker + " here.</a>";
+    let textTwo = "<a href='https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=" + req.body.ticker + "&outputsize=full&apikey=2XZVVF334ODD3HNT&datatype=csv'>Download " + req.body.ticker + " here.</a>";
     
     res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
 
