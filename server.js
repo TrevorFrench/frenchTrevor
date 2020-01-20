@@ -89,7 +89,7 @@ https.get('https://blockchain.info/ticker', (resp) => {
 app.get('/frenchsFinancialData', function(req, res) {
   const https = require('https');
 
-https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=2XZVVF334ODD3HNT', (resp) => {
+https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=MSFT&apikey=2XZVVF334ODD3HNT', (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.
@@ -122,7 +122,7 @@ app.post('/frenchsFinancialDataResp', function(req, res) {
 
   console.log(req.body.ticker);
   
-https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + req.body.ticker + '&outputsize=full&apikey=2XZVVF334ODD3HNT', (resp) => {
+https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=' + req.body.ticker + '&outputsize=full&apikey=2XZVVF334ODD3HNT', (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.
@@ -176,7 +176,7 @@ app.get('/frenchsFinancialDataResp', function(req, res) {
   
     console.log(query);
   
-https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + query + '&outputsize=full&apikey=2XZVVF334ODD3HNT', (resp) => {
+https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=' + query + '&outputsize=full&apikey=2XZVVF334ODD3HNT', (resp) => {
   let data = '';
   
   // A chunk of data has been recieved.
