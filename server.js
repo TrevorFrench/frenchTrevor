@@ -142,7 +142,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED
     if (text!= undefined){
       var keys = Object.keys(text);
       for (x in text) {
-      textTwo += keys[i] + ": " + text[x]['4. close'] + "<br>";
+      textTwo += keys[i] + ": " + text[x]['5. adjusted close'] + "<br>";
       i++;
       }
   
@@ -193,7 +193,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED
     let i = 0;
     var keys = Object.keys(text);
     for (x in text) {
-    textTwo += keys[i] + ": " + text[x]['4. close'] + "<br>";
+    textTwo += keys[i] + ": " + text[x]['5. adjusted close'] + "<br>";
     i++;
     }
 
