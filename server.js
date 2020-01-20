@@ -150,7 +150,7 @@ https.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED
       
       res.render('frenchsFinancialData.ejs', {statusMessage: textTwo});
     } else {
-      res.render('frenchsFinancialData.ejs', {statusMessage: "Error"});
+      res.render('frenchsFinancialData.ejs', {statusMessage: "Error. Please double check to make sure you spelled your ticker correctly and make sure that you did not include any spaces."});
     }
   });
 
