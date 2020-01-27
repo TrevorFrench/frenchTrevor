@@ -57,7 +57,7 @@ a:link.blog, a:visited.blog, a:active.blog {
 	border-left: 1px solid black;
   height: 75px;
   width: 100%;
-  z-index: 0;
+  z-index: -1;
 }
 
  a:hover.blog {
@@ -74,7 +74,7 @@ a:link.blog, a:visited.blog, a:active.blog {
   border-left: 1px solid black;
   height: 75px;
   width: 90%;
-  z-index: 0;
+  z-index: -1;
 }
 
 a:link.title, a:visited.title, a:hover.title, a:active.title {
