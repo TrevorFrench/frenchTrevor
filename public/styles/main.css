@@ -49,7 +49,7 @@ a:link.blog, a:visited.blog, a:active.blog {
   padding: 14px 25px;
   text-align: center;
   display: inline-block;
-  position: relative;
+  position: fixed;
   background-color: #4CAF50;
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;
@@ -65,7 +65,7 @@ a:link.blog, a:visited.blog, a:active.blog {
   padding: 14px 25px;
   text-align: center;
   display: inline-block;
-  position: relative;
+  position: fixed;
   background-color: #56a546;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
