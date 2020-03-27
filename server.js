@@ -33,36 +33,6 @@ app.get('/.well-known/brave-rewards-verification.txt', (req, res) => res.sendFil
 app.post('/massTexter', function(req, res) {
 	res.render('massTexter.ejs')});
 
-//****MEDIUM BLOG****************
-//*******************************
-//*******************************
-app.get('/blog', function(req, res) {
-  const https = require('https');
-
-https.get('https://medium.com/@frenchtrevor/latest?format=json', (resp) => {
-  let data = '';
-
-  // A chunk of data has been recieved.
-  resp.on('data', (chunk) => {
-    data += chunk;
-  });
-
-  // The whole response has been received. Print out the result.
-  resp.on('end', () => {
-    
-    var text = JSON.parse(data);
-    
-    res.render('blog.ejs', {statusMessage: text});
-    
-  });
-
-}).on("error", (err) => {
-  console.log("Error: " + err.message);
-});
-});
-//****MEDIUM BLOG**********************
-//*************************************
-//*************************************
 
 //****CRYPTOEXCHANGE*************
 //*******************************
