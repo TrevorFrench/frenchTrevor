@@ -22,7 +22,7 @@
     "csv-parser": "^2.3.0",
     "ejs": "^2.6.1",
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.4",
+    "express-fileupload": "^1.1.9",
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "https": "^1.0.0",
